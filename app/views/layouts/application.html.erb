@@ -10,7 +10,7 @@
 </head>
 <body>
 	<header id="main_navigation" class="clearfix">
-		<a href="/" class="name">Max Slob</a>
+    <%= link_to "Max Slob", root_path, class: "name" %>
 		<nav>
 			<ul>
 				<a href="projects.html">Projects</a>
@@ -20,7 +20,16 @@
 		</nav>
 	</header>
 
-<%= yield %>
+  <%= yield %>
+
+  <footer id="main_footer">
+    <p class="copyright">&copy; 2015 Max Slob</p>
+    <nav>
+      <a href="http://linkedin.com/in/maxslob" target="_blank"><i class="fa fa-linkedin"></i></a>
+      <a href="https://github.com/maxslob" target="_blank"><i class="fa fa-github-alt"></i></a>
+      <a href="https://instagram.com/max.slob/" target="_blank"><i class="fa fa-instagram"></i></a>
+    </nav>
+  </footer>
 
 </body>
 </html>

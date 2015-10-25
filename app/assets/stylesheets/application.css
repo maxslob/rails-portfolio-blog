@@ -441,7 +441,8 @@ th {
   margin: 0;
 }
 
-#post_show_content header h1 {
+#post_show_content header h2 {
+  font-size: 3em;
   margin: 0;
 }
 
