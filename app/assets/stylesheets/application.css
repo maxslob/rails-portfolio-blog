@@ -447,13 +447,7 @@ th {
 }
 
 #post_show_content header hr {
-  margin: 1em auto;
-}
-
-@media scree and (min-width: 1919px) {
-  #post_show_content header hr {
-    margin: 2em auto;
-  }
+  margin: 2em auto;
 }
 
 #post_show_content hr {
@@ -495,7 +489,7 @@ th {
 
 .pagination {
   text-align: center;
-  margin: 3em 0 3em 0;
+  margin: 0em 0 2em 0;
 }
 
 .pagination a, .pagination .previous_page, .pagination .current, .pagination .next_page {
@@ -1101,6 +1095,18 @@ input[type="submit"], .button {
 input[type="submit"]:hover, .button:hover {
   border: 2px solid #8bc6db;
   color: #8bc6db;
+}
+
+.project_button {
+  background: #8bc6db;
+  color: white;
+  text-decoration: none;
+  padding: 1em 2em;
+}
+
+.button_wrapper {
+  margin-top: 4em;
+  text-align: center;
 }
 
 @media screen and (min-width: 1919px) {
