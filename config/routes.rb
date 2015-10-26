@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :contacts, only: [:new, :create]
   get 'home/index'
   root 'home#index'
+
+  get '*path' => redirect('/')
 end
