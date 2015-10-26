@@ -1048,6 +1048,10 @@ hr {
   float: left;
 }
 
+#main_navigation .name:hover {
+  border-color: #424652;
+}
+
 #main_navigation nav {
   float: right;
   padding-top: 1.2rem;
@@ -1060,6 +1064,10 @@ hr {
   text-decoration: none;
   margin: 0 1rem;
   font-size: 1rem;
+}
+
+#main_navigation nav a:hover {
+  color: #8bc6db;
 }
 
 #main_navigation nav ul {

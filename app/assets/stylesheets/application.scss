@@ -108,6 +108,9 @@ hr{
   	text-decoration: none;
   	color: $dark;
   	float: left;
+    &:hover{
+      border-color: $dark;
+    }
   }
   nav{
     float: right;
@@ -119,6 +122,9 @@ hr{
       text-decoration: none;
       margin: 0 1rem;
       font-size: 1rem;
+      &:hover{
+        color: $highlight;
+      }
     }
     ul{
       margin-bottom: 0;
