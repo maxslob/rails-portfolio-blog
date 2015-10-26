@@ -199,6 +199,13 @@ input[type="submit"], .button{
 .button_wrapper{
   margin-top: 4em;
   text-align: center;
+  a{
+    &:hover{
+    border: 2px solid $light;
+    background-color: #fff;
+    color: $dark;
+    }
+  }
 }
 
 @media screen and (min-width: 1919px){
