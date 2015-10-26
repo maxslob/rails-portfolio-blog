@@ -57,7 +57,7 @@ body{
   a{
     text-decoration: none;
     color: $dark;
-    border-bottom: 2px solid $dark;
+    border-bottom: 2px solid $highlight;
     padding: 0 .05em;
     &:hover{
       background-color: $highlight;
