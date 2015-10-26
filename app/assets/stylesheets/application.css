@@ -989,18 +989,18 @@ body {
   border-bottom: 1px solid #E9E9E9;
 }
 
-.description img {
+.description img, .content img {
   max-width: 80%;
 }
 
-.description a {
+.description a, .content a {
   text-decoration: none;
   color: #424652;
   border-bottom: 2px solid #8bc6db;
   padding: 0 0.05em;
 }
 
-.description a:hover {
+.description a:hover, .content a:hover {
   background-color: #8bc6db;
 }
 
