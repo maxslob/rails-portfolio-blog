@@ -25,8 +25,21 @@
 }
 
 // POSTS SHOW
-
 #post_show_content{
+	.description, #content{
+  img{
+    max-width: 80%;
+  }
+  a:not([target="_blank"]){
+    text-decoration: none;
+    color: $dark;
+    border-bottom: 2px solid $highlight;
+    padding: 0 .05em;
+    &:hover{
+      background-color: $highlight;
+    }
+  }
+}
 	#content{
 		padding-top: .1rem;
 	}

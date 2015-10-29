@@ -12,6 +12,7 @@ $border: #e9e9e9;
 
 *{
   box-sizing: border-box;
+  transition: all 0.07s ease;
 }
 
 body{
@@ -51,21 +52,6 @@ body{
   text-align: center;
   padding: 1em 0;
   border-bottom: 1px solid #E9E9E9;
-}
-
-.description, #content{
-  img{
-    max-width: 80%;
-  }
-  a{
-    text-decoration: none;
-    color: $dark;
-    border-bottom: 2px solid $highlight;
-    padding: 0 .05em;
-    &:hover{
-      background-color: $highlight;
-    }
-  }
 }
 
 h1, h2, h3, h4, h5, h6, p, ul, li {
@@ -204,16 +190,16 @@ input[type="submit"], .button{
   }
 }
 
-.project_button{
-  background: $highlight;
-  color: white;
-  text-decoration: none;
-  padding: 1em 2em;
-}
 
 .button_wrapper{
   margin-top: 4em;
   text-align: center;
+  .project_button{
+    background: $highlight;
+    color: white;
+    text-decoration: none;
+    padding: 1em 2em;
+  }
   a{
     &:hover{
     border: 2px solid $light;

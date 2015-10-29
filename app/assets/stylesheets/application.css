@@ -427,6 +427,21 @@ th {
   margin: 3em auto;
 }
 
+#post_show_content .description img, #post_show_content #content img {
+  max-width: 80%;
+}
+
+#post_show_content .description a:not([target="_blank"]), #post_show_content #content a:not([target="_blank"]) {
+  text-decoration: none;
+  color: #424652;
+  border-bottom: 2px solid #8bc6db;
+  padding: 0 0.05em;
+}
+
+#post_show_content .description a:not([target="_blank"]):hover, #post_show_content #content a:not([target="_blank"]):hover {
+  background-color: #8bc6db;
+}
+
 #post_show_content #content {
   padding-top: .1rem;
 }
@@ -948,6 +963,7 @@ code {
 /* Literal.Number.Integer.Long */
 * {
   box-sizing: border-box;
+  transition: all 0.07s ease;
 }
 
 body {
@@ -987,21 +1003,6 @@ body {
   text-align: center;
   padding: 1em 0;
   border-bottom: 1px solid #E9E9E9;
-}
-
-.description img, #content img {
-  max-width: 80%;
-}
-
-.description a, #content a {
-  text-decoration: none;
-  color: #424652;
-  border-bottom: 2px solid #8bc6db;
-  padding: 0 0.05em;
-}
-
-.description a:hover, #content a:hover {
-  background-color: #8bc6db;
 }
 
 h1, h2, h3, h4, h5, h6, p, ul, li {
@@ -1151,16 +1152,16 @@ input[type="submit"]:hover, .button:hover {
   color: #8bc6db;
 }
 
-.project_button {
+.button_wrapper {
+  margin-top: 4em;
+  text-align: center;
+}
+
+.button_wrapper .project_button {
   background: #8bc6db;
   color: white;
   text-decoration: none;
   padding: 1em 2em;
-}
-
-.button_wrapper {
-  margin-top: 4em;
-  text-align: center;
 }
 
 .button_wrapper a:hover {
