@@ -133,7 +133,10 @@ hr{
   }
 }
 
+$t: transparent;
+
 #page_title{
+  margin-top: 0;
   text-align: center;
   border-bottom: 1px solid $border;
   padding: 3rem 0;
@@ -143,6 +146,7 @@ hr{
 
 #main_footer{
   padding: 2.5em 5%;
+  padding-bottom: 3.5em;
   border-top: 1px solid $border;
   .copyright{
     float: left;
