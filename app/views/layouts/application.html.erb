@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blog</title><title>Max Slob - Starter Developer and Designer</title>
+  <title>Max Slob - Starter Developer and Designer</title>
   <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -19,19 +19,24 @@
 </script>
 </head>
 <body>
-	<header id="main_navigation" class="clearfix">
-    <%= link_to "Max Slob", root_path, class: "name" %>
-		<nav>
-			<ul>
-				<%= link_to "Projects", projects_path %>
-        <%= link_to "Articles", posts_path %>
-        <%= link_to "Contact", new_contact_path %>
-        <% if user_signed_in? %>
-          <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-        <% end %>
-			</ul>
-		</nav>
-	</header>
+  <header>
+   <div class="wrapper">
+    <div class="logo"><a href="/">maxslob</a></div>
+      <nav role='navigation'>
+        <ul>
+          <li><a href="#content">About</a></li>
+          <li><%= link_to "Blog", posts_path %></li>
+          <li><%= link_to "Expeirence & Work", projects_path %></li>
+          <li><%= link_to "Contact", new_contact_path %></li>
+          <li>
+            <% if user_signed_in? %>
+              <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+            <% end %>
+          </li>
+        </ul>
+      </nav>  
+    </div>
+  </header>
 
 
   <% if notice %>
@@ -42,14 +47,15 @@
 
   <%= yield %>
 
-  <footer id="main_footer">
-    <p class="copyright">&copy; 2015 Max Slob</p>
-    <nav>
-      <a href="http://linkedin.com/in/maxslob" target="_blank"><i class="fa fa-linkedin"></i></a>
-      <a href="https://github.com/maxslob" target="_blank"><i class="fa fa-github-alt"></i></a>
-      <a href="https://instagram.com/max.slob/" target="_blank"><i class="fa fa-instagram"></i></a>
-    </nav>
+  <footer class="clearfix">
+    <div class="wrapper">
+      <p class="copyright">&copy; 2015 Max Slob</p>
+      <nav>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-github-alt"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+      </nav>
+    </div>
   </footer>
-
 </body>
 </html>

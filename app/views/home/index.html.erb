@@ -1,38 +1,184 @@
-<div class="wrapper wrapper_padding clearfix">
-  <div class="col-1 about homepage_content">
-    <h2>About</h2>
-    <hr>
-    <p>
-    I'm a starter designer & developer living in Minsk.
-    </p>
-    <p>
-    I have a good knowledge of front-end stuff + angular.js, git + github. I'm improving them by doing sites and academy's laboratory works.
-    </p>
-    <p>
-    Spend all my free time reading articles, watching videos about developing, design and doing a projects like that.
-    </p>
-    <p>
-    For now i learn back-end based on Ruby on Rails.
-    </p> 
-  </div>
-  <div class="col-2 homepage_content">
-    <h2>Stuff I've Built</h2>
-    <hr>
 
-    <% @projects.each do |project| %>
+    
+    <!-- <% @projects.each do |project| %>
       <h3><a href="#"><%= link_to project.title, project %></a></h3>
       <p class="date"><%= project.created_at.strftime("%A, %b %d") %></p>
-    <% end %>
+    <% end %> -->
 
-  </div>
-  <div class="col-3 homepage_content">
-    <h2>Stuff I've Written</h2>
-    <hr>
+  
 
-    <% @posts.each do |post| %>
+    <!-- <% @posts.each do |post| %>
       <h3><a href="#"><%= link_to post.title, post %></a></h3>
       <p class="date"><%= post.created_at.strftime("%A, %b %d") %></p>
-    <% end %>
+    <% end %> -->
 
+<div class="hero">
+    <div class="wrapper clearfix">
+      <div class="col-1 clearfix">
+        <section>
+          <h1 id="hello">Hello</h1>
+          <h3>My name: Max. This is my &nbsp<strong id="desc">website</strong></h3>
+        </section>
+      </div>
+      <div class="col-2 clearfix">
+        <section>
+          <h1>I'm</h1>
+          <h2><i>Developer</i> & <b>Designer</b></h2>
+        </section>
+      </div>
+      <p><a href="#content"><i class="fa fa-angle-down"></i></a></p>
+    </div>
   </div>
-</div> <!-- wrapper-end -->
+
+  <a id="content"></a>
+
+  <main class="clearfix">
+    <div class="wrapper">
+      <div class="col-1">
+        <section>
+          <h2>About Me</h2>
+          <small id="date">31.10.2015</small>
+          <p>
+          <strong>I'm</strong> a starter developer & designer living in Minsk.
+          </p><p>
+          I have a good knowledge of front-end. I'm intensively improving them.
+          </p><p>
+          Spend a lot of time reading articles(even books), watching tutorials & consolidate my knowledge in practice.
+          </p><p>
+          For now i learn back-end based on Ruby on Rails and advanced css & js.
+          </p>
+        </section>
+      </div>
+
+      <div class="col-2">
+        <h2>Skills & Knowledge</h2>
+
+          <section>
+            <h3>Front End</h3>
+            <hr>
+            <ul>
+              <li>HTML5</li>
+              <ol><li>Jade <b>|</b>  Microdata <b>|</b>  Forms</li></ol>
+              <li>CSS3</li>
+              <ol>
+                <li>Bootstrap <b> | </b> 
+                 Sass
+                 Bourbon/Stylus </li>
+              </ol>
+              <li>JavaScript</li>
+              <ol>
+                <li>jQuery </li>
+                <li>Angular.js</li>
+                <ol>
+                  <li>MVC <b> | </b> 
+                  Directives <b> | </b> 
+                  Controllers,
+                  Services</li>
+                </ol>
+                <li>CoffeeScript<b> | </b> 
+                JSON (APIs)</li>
+              </ol>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Design</h3>
+            <hr>
+            <ul>
+              <li>Responsive</li>
+              <ol>
+                <li>Layout<b> | </b> 
+                Images</li>
+              </ol>
+              <li>Typography</li>
+              <li>Color scheme</li>
+              <li>Graphics</li>
+              <ol>
+                <li>Photoshop</li>
+                <ol>
+                  <li>Layout <b> | </b> 
+                  Patterns</li>
+                </ol>
+                <li>Illustrator</li>
+                <ol>
+                  <li>Logos <b> | </b> 
+                  SVG</li>
+                </ol>
+              </ol>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Back End</h3>
+            <hr>
+            <ul>
+              <li>Ruby on Rails (Basics)</li>
+              <ol>
+                <li>MVC<b> | </b> 
+                Models<b> | </b> 
+                Views 
+                Controllers<b> | </b> 
+                Helpers<b> | </b> </li>
+                <li>Gems</li>
+                <ol>
+                  <li>Device <b> | </b> 
+                  Mail_Form <b> | </b> 
+                  Friendly_Id
+                  <li>Will_Paginate<b> | </b> 
+                  RedCarpet
+                  Pygments</li>
+                </ol>
+              </ol>
+              <li>Also GIT</li>
+              <ol>
+                <li>Checkout<b> | </b> 
+                Merge<b> | </b> 
+                GitHub</li>
+              </ol>
+              <li>English Level</li>
+              <ol>
+                <li>Upper Intermediate</li>
+              </ol>
+            </ul>
+          </section>
+      </div>
+    </div>
+  </main>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script>
+    setTimeout(desc, 1500);
+    function hide(){
+      $('#desc').animate({'opacity': '0'}, 2500);
+    }
+    function show(){
+      $('#desc').animate({'opacity': '1'}, 2500);
+    }
+    function desc(){
+      if($('#desc')){
+      $('#desc').html('blog').css('box-shadow', '0 1px 0 0 #1976D2');
+      $('#hello').css('color',"#1976D2");
+      show();
+      setTimeout(desc2, 5000);
+      hide();}
+    }
+    function desc2(){
+      $('#desc').html('portfolio').css('box-shadow', '0 1px 0 0 #b232b2');
+      $('#hello').css('color',"#b232b2");
+      show();
+      setTimeout(desc3, 5000);
+      hide();
+    }
+    function desc3(){
+      $('#desc').html('website').css('box-shadow', '0 1px 0 0 white');
+      show();
+      setTimeout(desc, 5000);
+      hide();
+      $('#hello').css('color',"white");
+    }
+  </script>
+<!-- <script>
+    $('body').append('<div id="loader"></div>');
+    $(window).load(function(){
+    $("#loader").fadeOut("slow");
+    });
+</script> -->
