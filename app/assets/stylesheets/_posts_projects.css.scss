@@ -1,29 +1,3 @@
-#posts_wrapper{
-	padding: 3em 0;
-	.post{
-		text-align: center;
-		.date{
-			font-size: .9em;
-			margin: 0;
-		}
-		h2{
-			margin: 0;
-			font-size: 2em;
-			text-transform: uppercase;
-			a{
-				text-decoration: none;
-				color: $dark;
-				&:hover{
-					color: $highlight;
-				}
-			}
-		}
-		hr{
-			margin: 3em auto;
-		}
-	}
-}
-
 // POSTS SHOW
 #post_show_content{
 	.description, #content{
@@ -33,10 +7,10 @@
   a:not([target="_blank"]){
     text-decoration: none;
     color: $dark;
-    border-bottom: 2px solid $highlight;
+    border-bottom: 2px solid $light;
     padding: 0 .05em;
     &:hover{
-      background-color: $highlight;
+      background-color: $light;
     }
   }
 }
@@ -77,15 +51,15 @@
 		color: $dark;
 		padding: 1em 1.5em;
 		&:hover{
-			color: $highlight;
+			color: $light;
 			cursor: pointer;
 		}
 	}
 }
 
 #admin_links{
-	border-top: 1px solid $border;
-	border-bottom: 1px solid $border;
+	border-top: 1px solid $b;
+	border-bottom: 1px solid $b;
 	text-align: center;
 	padding: 1em 0;
 	margin: 3em 0;
@@ -129,12 +103,12 @@
 		font-style: normal;
 		color: $dark;
 		&:hover{
-			background: $highlight;
+			background: $light;
 			color: white;
 		}
 	}
 	.current{
-		background: $highlight;
+		background: $light;
 		color: white;
 	}
 	.disabled{

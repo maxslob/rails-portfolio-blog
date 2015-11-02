@@ -395,6 +395,139 @@ th {
   padding: 0;
 }
 
+#post_show_content .description img, #post_show_content #content img {
+  max-width: 80%;
+}
+
+#post_show_content .description a:not([target="_blank"]), #post_show_content #content a:not([target="_blank"]) {
+  text-decoration: none;
+  color: #1976D2;
+  border-bottom: 2px solid #BBDEFB;
+  padding: 0 0.05em;
+}
+
+#post_show_content .description a:not([target="_blank"]):hover, #post_show_content #content a:not([target="_blank"]):hover {
+  background-color: #BBDEFB;
+}
+
+#post_show_content #content {
+  padding-top: .1rem;
+}
+
+#post_show_content header {
+  text-align: center;
+}
+
+#post_show_content header .date {
+  font-size: .9em;
+  color: #BBDEFB;
+  margin: 0;
+}
+
+#post_show_content header h2 {
+  font-size: 3em;
+  margin: 0;
+}
+
+#post_show_content header hr {
+  margin: 2em auto;
+}
+
+#post_show_content hr {
+  margin: 2.5em auto;
+}
+
+#share_box {
+  text-align: center;
+}
+
+#share_box p {
+  padding: 0 0 1em 0;
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+  color: #1976D2;
+  font-size: .8em;
+}
+
+#share_box i {
+  color: #1976D2;
+  padding: 1em 1.5em;
+}
+
+#share_box i:hover {
+  color: #BBDEFB;
+  cursor: pointer;
+}
+
+#admin_links {
+  border-top: 1px solid #B6B6B6;
+  border-bottom: 1px solid #B6B6B6;
+  text-align: center;
+  padding: 1em 0;
+  margin: 3em 0;
+}
+
+#admin_links a {
+  color: #BBDEFB;
+  margin: 0 1em;
+  font-weight: 700;
+  font-size: .8em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+#admin_links a:hover {
+  color: black;
+}
+
+.pagination:before,
+.pagination:after {
+  content: " ";
+  display: table;
+}
+
+.pagination:after {
+  clear: box;
+}
+
+.pagination {
+  text-align: center;
+  margin: 0em 0 2em 0;
+}
+
+.pagination a, .pagination .previous_page, .pagination .current, .pagination .next_page {
+  padding: 0.75em 1em;
+  margin: 0 0.5em;
+  border-radius: .15em;
+  line-height: 20px;
+  text-decoration: none;
+  background: white;
+  font-weight: 700;
+  font-size: .7em;
+  font-style: normal;
+  color: #1976D2;
+}
+
+.pagination a:hover, .pagination .previous_page:hover, .pagination .current:hover, .pagination .next_page:hover {
+  background: #BBDEFB;
+  color: white;
+}
+
+.pagination .current {
+  background: #BBDEFB;
+  color: white;
+}
+
+.pagination .disabled {
+  color: #C0C0C0;
+}
+
+.pagination .disabled:hover {
+  color: #C0C0C0;
+  background: white;
+}
+
 /*
    Some simple Github-like styles, with syntax highlighting CSS via Pygments.
 */
@@ -767,6 +900,7 @@ code {
 
 body {
   height: calc(100vh - 30px);
+  font-family: Raleway, sans-serif;
 }
 
 /* Header */
@@ -945,10 +1079,6 @@ header nav ul li a:hover {
 
 /* About */
 main {
-  background: url(http://i.imgur.com/cKrjRpX.jpg) no-repeat 0% 0%;
-  /* 1x img */
-  background-color: inherit;
-  background-size: cover;
   min-height: 650px;
   height: 100vh;
 }
@@ -1078,17 +1208,20 @@ main .wrapper .col-2 section ul > ol > ol > li {
 
 /* Footer */
 footer {
-  background-color: #1976D2;
+  background-color: #333;
+  position: relative;
+  box-shadow: 0 -2px 2px 2px gray;
 }
 
 footer .copyright {
   float: left;
   font-family: Calibri;
-  padding: 1.5em 0;
+  padding: 1.3em 0 0 0;
   margin: 0;
   color: white;
   font-weight: bold;
   font-size: 1.5em;
+  position: absolute;
 }
 
 footer nav {
@@ -1113,6 +1246,8 @@ footer nav a:not(:last-child) {
   main {
     background: url(http://i.imgur.com/eGfvKzy.jpg) no-repeat 0% 50%;
     /* 2x img */
+    background-color: inherit;
+    background-size: cover;
   }
 }
 
@@ -1120,6 +1255,8 @@ footer nav a:not(:last-child) {
   main {
     background: url(http://i.imgur.com/cKrjRpX.jpg) no-repeat 0% 0%;
     /* 1x img */
+    background-color: inherit;
+    background-size: cover;
   }
 }
 
@@ -1172,4 +1309,58 @@ input[type="submit"], .button {
 input[type="submit"]:hover, .button:hover {
   border: 2px solid #BBDEFB;
   color: #BBDEFB;
+}
+
+#page_title {
+  text-align: center;
+  padding: 2em  0 0 0;
+  color: #333;
+  font-size: 3.5em;
+  margin: 0;
+}
+
+hr {
+  padding: 0.5em 0 1em 0;
+  margin: 0 45% 5em 45%;
+  border: 0;
+  border-bottom: 3px solid #1976D2;
+}
+
+.post {
+  margin-top: 7em;
+  margin-bottom: 5em;
+}
+
+.post h2 {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.post h2 a {
+  color: #5e5e5e;
+  text-decoration: none;
+  font-size: 1.7em;
+  transition: color 0.2s ease;
+}
+
+.post h2 a:hover {
+  opacity: .7;
+  color: #1976D2;
+}
+
+.post h2:last-child {
+  margin-bottom: 7em;
+}
+
+.post .date {
+  text-align: center;
+  margin: 0;
+  font-family: Calibri;
+  text-transform: uppercase;
+  color: #B6B6B6;
+}
+
+.post hr {
+  margin: 0 47%;
+  border-color: #03A9F4;
 }

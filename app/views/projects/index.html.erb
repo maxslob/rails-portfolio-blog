@@ -1,11 +1,11 @@
-<h1 id="page_title">Stuff I've Built</h1>
-
-<div id="posts_wrapper" class="skinny_wrapper">
+<div class="wrapper skinny_wrapper">
+<h1 id="page_title">All The Stuff I've Built</h1>
+<hr>
 
 <% @projects.each do |project| %>
   <div class="post">
-    <p class="date"><%= project.created_at.strftime('%A, %B %d') %></p>
     <h2><a href="#"><%= link_to project.title, project %></a></h2>
+    <p class="date"><%= project.created_at.strftime('%A, %B %d') %></p>
     <hr>
   </div>
 <% end %>

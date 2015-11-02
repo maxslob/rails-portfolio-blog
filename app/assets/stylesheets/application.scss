@@ -1,11 +1,5 @@
 @import "normalize.css.scss";
 
-
-$dark: #424652;
-$light: #9a9da4;
-$highlight: #8bc6db;
-$border: #e9e9e9;
-
 $r: Raleway, sans-serif;
 $bl: #03A9F4;
 $b: #B6B6B6;
@@ -16,8 +10,7 @@ $light: #BBDEFB;
 $icons: #FFFFFF;
 $purple: #b232b2;
 
-//@import "_posts_projects.css.scss";
-//@import "home.css.scss";
+@import "_posts_projects.css.scss";
 @import "pygments.css.scss";
 
 
@@ -44,6 +37,7 @@ $purple: #b232b2;
 
 body {
   height: calc(100vh - 30px);
+  font-family: $r;
 }
 
 /* Header */
@@ -211,9 +205,6 @@ header {
 
 /* About */
 main {
-  background: url(http://i.imgur.com/cKrjRpX.jpg) no-repeat 0% 0%; /* 1x img */
-  background-color: inherit;
-  background-size: cover;
   min-height: 650px;
   height: 100vh;
   .wrapper {
@@ -334,15 +325,18 @@ main {
 
 /* Footer */
 footer {
-  background-color: $dark;
+  background-color: #333;
+  position: relative;
+  box-shadow: 0 -2px 2px 2px gray;
   .copyright {
     float: left;
     font-family: Calibri;
-    padding: 1.5em 0;
+    padding: 1.3em 0 0 0;
     margin: 0;
     color: white;
     font-weight: bold;
     font-size: 1.5em;
+    position: absolute;
   }
   nav {
     float: right;
@@ -363,12 +357,16 @@ footer {
 @media screen and (min-height: 850px) {
   main {
     background: url(http://i.imgur.com/eGfvKzy.jpg) no-repeat 0% 50%; /* 2x img */
+    background-color: inherit;
+  background-size: cover;
   }
 }
 
 @media screen and (max-height: 849px) {
   main {
     background: url(http://i.imgur.com/cKrjRpX.jpg) no-repeat 0% 0%; /* 1x img */
+    background-color: inherit;
+  background-size: cover;
   }
 }
 
@@ -424,5 +422,58 @@ input[type="submit"], .button{
   &:hover{
     border: 2px solid $light;
     color: $light;
+  }
+}
+
+
+#page_title{
+  text-align: center;
+  padding: 2em  0 0 0;
+  color: #333;
+  font-size: 3.5em;
+  margin: 0;
+}
+
+hr{
+  padding: 0.5em 0 1em 0;
+  margin: 0 45% 5em 45%;
+  border: 0;
+  border-bottom: 3px solid $dark;
+}
+
+.skinny_wrapper{
+  
+}
+
+.post{
+  margin-top: 7em;
+  margin-bottom: 5em;
+  h2{
+    text-align: center;
+    margin-bottom: 0;
+    a{
+      color: $tex - 20;
+      text-decoration: none;
+      font-size: 1.7em;
+      transition: color 0.2s ease;
+      &:hover{
+        opacity: .7;
+        color: $dark;
+      }
+    }
+    &:last-child{
+      margin-bottom: 7em;
+    }
+  }
+  .date{
+    text-align: center;
+    margin: 0;
+    font-family: Calibri;
+    text-transform: uppercase;
+    color: $b
+  }
+  hr{
+    margin: 0 47%;
+    border-color: $bl;
   }
 }
