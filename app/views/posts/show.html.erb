@@ -1,9 +1,9 @@
-<div id="post_show_content" class="skinny_wrapper wrapper_padding">
-    <header>
-      <p class="date"><%= @post.created_at.strftime('%A, %B %d') %></p>
+<div id="post_show_content" class="skinny_wrapper">
+    <div class="title">
       <h2><%= @post.title %></h2>
+      <p class="date"><%= @post.created_at.strftime('%A, %B %d') %></p>
       <hr>
-    </header>
+    </div>
 
     <div id="content">
 		  <%= markdown @post.content %>
@@ -16,7 +16,7 @@
     </div>
   <% end %>
 
-  <hr>
+  <hr class="share-box-hr">
 
   <div id="share_box">
     <p>Share This Article</p>
@@ -28,7 +28,7 @@
     <a onclick="javascript:window.open('https://plus.google.com/share?url=<%= url_for([@post, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300'); void(0);"><i class="fa fa-google-plus"></i></a>
   </div>
 
-  <hr>
+  <hr class="share-box-hr">
 
   <%= render 'disqus' %>
   
