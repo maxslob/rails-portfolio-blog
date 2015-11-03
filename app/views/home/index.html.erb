@@ -176,6 +176,20 @@
       $('#hello').css('color',"white");
     }
   </script>
+  <script type="text/javascript" charset="utf-8">
+    $('a[href^="#"]').on('click',function (e) {
+          e.preventDefault();
+
+          var target = this.hash;
+          var $target = $(target);
+
+          $('html, body').stop().animate({
+              'scrollTop': $target.offset().top
+          }, 200, 'swing', function () {
+              window.location.hash = target;
+          });
+      });
+  </script>
 <!-- <script>
     $('body').append('<div id="loader"></div>');
     $(window).load(function(){
