@@ -931,6 +931,7 @@ header nav ul li a:hover {
 /* Hero */
 .hero {
   padding-top: 0.001em;
+  z-index: -222;
   height: 100vh;
   position: relative;
   background: url(http://i.imgur.com/bTmWfSR.png);
@@ -975,7 +976,7 @@ header nav ul li a:hover {
 }
 
 .hero .wrapper .col-2 {
-  z-index: 1;
+  z-index: -1;
   margin: 0 auto;
   max-width: 50%;
   width: 50%;
