@@ -1073,8 +1073,8 @@ main .wrapper .col-1 section h2 {
 }
 
 main .wrapper .col-1 section small {
-  color: rgba(255, 255, 255, 0.4);
-  font-family: Calibri, serif;
+  color: #333;
+  font-family: Lato, Raleway, sans-serif;
   position: relative;
   top: -5px;
   font-size: 0.9em;
@@ -1084,7 +1084,7 @@ main .wrapper .col-1 section small {
 main .wrapper .col-1 section p {
   margin-top: 1.4em;
   color: #212121;
-  font-family: Calibri;
+  font-family: Lato, Raleway, sans-serif;
   line-height: 1.5em;
   font-size: 1.12em;
 }
@@ -1129,17 +1129,17 @@ main .wrapper .col-2 section h3 {
 }
 
 main .wrapper .col-2 section hr {
-  margin: 1em 40%;
+  margin: 0.3em 40% 0.5em 40%;
   margin-bottom: 2em;
   border-width: 2px;
-  border-color: rgba(255, 255, 255, 0.4);
+  border-color: #03A9F4;
   border-top: 0;
   border-left: 0;
   border-right: 0;
 }
 
 main .wrapper .col-2 section ul li {
-  font-family: Calibri;
+  font-family: Lato, Raleway, sans-serif;
 }
 
 main .wrapper .col-2 section ul, main .wrapper .col-2 section ol {
@@ -1147,33 +1147,65 @@ main .wrapper .col-2 section ul, main .wrapper .col-2 section ol {
 }
 
 main .wrapper .col-2 section ul li b, main .wrapper .col-2 section ol li b {
-  color: rgba(255, 255, 255, 0.4);
+  color: #212121;
 }
 
 main .wrapper .col-2 section ul > li {
   font-weight: bold;
-  font-size: 1.4em;
+  font-size: 1.3em;
   color: #212121;
   list-style-type: none;
   margin-top: 1em;
   position: relative;
-  text-align: center;
+  text-align: left;
+}
+
+main .wrapper .col-2 section ul > li::before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #333 170%);
+  margin-right: 5px;
 }
 
 main .wrapper .col-2 section ul > ol > li {
-  text-align: center;
+  text-align: left;
   list-style-type: none;
   font-size: 1.2em;
-  font-weight: bold;
-  color: #424652;
+  font-weight: normal;
+  color: #212121;
   padding-left: 0em;
+  margin-left: 10px;
+}
+
+main .wrapper .col-2 section ul > ol > li::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #BB3E3E 170%);
+  margin-right: 5px;
 }
 
 main .wrapper .col-2 section ul > ol > ol > li {
-  text-align: center;
+  text-align: left;
   list-style-type: none;
   font-size: 1.1em;
-  color: #424652;
+  margin-left: 20px;
+  color: #212121;
+}
+
+main .wrapper .col-2 section ul > ol > ol > li::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #1976D2 170%);
+  margin-right: 5px;
 }
 
 /* Footer */
@@ -1197,7 +1229,7 @@ footer .copyright {
 }
 
 footer .copyright span {
-  font-family: Lato, Raleway sans-serif;
+  font-family: Lato, Raleway, sans-serif;
   font-size: 1.3rem;
 }
 
@@ -1235,7 +1267,7 @@ footer nav a:not(:last-child) {
 
 @media screen and (max-height: 849px) {
   main {
-    background: url(http://i.imgur.com/cKrjRpX.jpg) no-repeat 0% 0%;
+    background: radial-gradient(circle at top right, orange 0%, transparent 15%), linear-gradient(to top, #1976D2, transparent), url(http://i.imgur.com/cKrjRpX.jpg) no-repeat 0% 0%;
     /* 1x img */
     background-color: inherit;
     background-size: cover;

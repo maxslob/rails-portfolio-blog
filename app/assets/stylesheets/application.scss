@@ -242,8 +242,8 @@ main {
           text-align: center;
         }
         small {
-          color: $b;
-          font-family: Calibri, serif;
+          color: #333;
+          font-family: $lato;
           position: relative;
           top: -5px;
           font-size: 0.9em;
@@ -252,7 +252,7 @@ main {
         p {
           margin-top: 1.4em;
           color: $text;
-          font-family: Calibri;
+          font-family: $lato;
           line-height: 1.5em;
           font-size: 1.12em;
           strong {
@@ -291,49 +291,81 @@ main {
           text-align: center;
         }
         hr {
-          margin: 1em 40%;
+          margin: 0.3em 40% 0.5em 40%;
           margin-bottom: 2em;
           border-width: 2px;
-          border-color: $b;
+          border-color: $bl;
           border-top: 0;
           border-left: 0;
           border-right: 0;
         }
         ul {
           li {
-            font-family: Calibri;
+            font-family: $lato;
           }
         }
         ul, ol {
           padding-left: 0em;
           li {
             b {
-              color: $b;
+              color: $text;
             }
           }
         }
         ul > li {
           font-weight: bold;
-          font-size: 1.4em;
+          font-size: 1.3em;
           color: $text;
           list-style-type: none;
           margin-top: 1em;
           position: relative;
-          text-align: center;
+          text-align: left;
+          &::before{
+            content: "";
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            //background-color: #333;
+            background: linear-gradient(to right,  rgba(white, 0) 0%, #333 170%);
+            margin-right: 5px;
+          }
         }
         ul > ol > li {
-          text-align: center;
+          text-align: left;
           list-style-type: none;
           font-size: 1.2em;
-          font-weight: bold;
-          color: $tex;
+          font-weight: normal;
+          color: $text;
           padding-left: 0em;
+          margin-left: 10px;
+          &::before{
+            content: "";
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            //background-color: $purple;
+            background: linear-gradient(to right, rgba(white, 0) 0%, $purple 170%);
+            margin-right: 5px;
+          }
         }
         ul > ol > ol > li {
-          text-align: center;
+          text-align: left;
           list-style-type: none;
           font-size: 1.1em;
-          color: $tex;
+          margin-left: 20px;
+          color: $text;
+          &::before{
+            content: "";
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            //background-color: $purple;
+            background: linear-gradient(to right, rgba(white, 0) 0%, $dark 170%);
+            margin-right: 5px;
+          }
         }
       }
     }
@@ -357,7 +389,7 @@ footer {
     cursor: default;
     transition: all .25s linear;
     span{
-      font-family: Lato, Raleway sans-serif;
+      font-family: $lato;
       font-size: 1.3rem;
     }
     &:hover{
@@ -393,7 +425,9 @@ footer {
 
 @media screen and (max-height: 849px) {
   main {
-    background: url(http://i.imgur.com/cKrjRpX.jpg) no-repeat 0% 0%; /* 1x img */
+    background: radial-gradient(circle at top right, orange 0%, rgba(0,0,0, 0) 15%),
+                linear-gradient(to top, $dark, rgba(0,0,0, 0)), 
+                url(http://i.imgur.com/cKrjRpX.jpg) no-repeat 0% 0%; /* 1x img */
     background-color: inherit;
   background-size: cover;
   }
