@@ -1,14 +1,19 @@
 @import "normalize.css.scss";
 
 $r: Raleway, sans-serif;
+$lato: Lato, Raleway, sans-serif;
+
+
 $bl: #03A9F4;
-$b: #B6B6B6;
+$b: rgba(255,255,255, .4);
+$border: #333 + 140;
+$header-color: #333333;
 $text: #212121;
 $tex: #424652;
 $dark: #1976D2;
 $light: #BBDEFB;
 $icons: #FFFFFF;
-$purple: #b232b2;
+$purple: #BB3E3E;
 
 @import "_posts_projects.css.scss";
 @import "pygments.css.scss";
@@ -31,7 +36,7 @@ $purple: #b232b2;
 }
 
 .wrapper {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -42,53 +47,68 @@ body {
 
 /* Header */
 header {
-  z-index: 9999999999;
   width: 100%;
-  padding-bottom: 6.25em;
-  box-shadow: 0 1px 1px 1px $b;
-  background-color: $bl;
-  .logo {
-    font-family: $r;
-    margin-left: 40px;
-    font-size: 2em;
-    font-weight: 700;
-    padding: 1em 0em;
-    float: left;
-    color: white;
-    a {
+  height: 80px;
+  //box-shadow: 0 1px 1px 1px $b;
+  background-color: #333;
+  .wrapper{
+    a[href="/"]{
+      font-weight: bold;
+      float: left;
+      text-align: left;
+      margin-right: auto;
       text-decoration: none;
+      font-size: 1.3em;
       color: white;
-      box-shadow: 0 2px 0px 0px white;
-      &:hover {
-        color: $light;
-        box-shadow: 0 2px 0px 0px $light;
+      transition: color 0.15s ease-in-out;
+      margin-top: 28px;
+      color: $b;
+      span{
+        color: $bl;
+      }
+      &:hover{
+        color: white;
       }
     }
-  }
-  nav {
-    float: right;
-    padding: 1.3em 0;
-    z-index: 9999999999;
-    ul {
-      li {
-        list-style-type: none;
-        display: inline-block;
-        padding: 0 0.5em;
-        margin: 0 0.5em;
-        &:last-child {
-          margin-right: 0;
-        }
-        a {
-          z-index: 999999999;
-          color: #333333;
-          text-decoration: none;
-          font-family: $r;
-          font-size: 1.3em;
-          color: white;
-          padding-bottom: 0.2em;
-          transition: box-shadow 0.15s ease-in-out;
-          &:hover {
-            box-shadow: 0px 3px 0px 0px $dark;
+    nav{
+      text-align: right;
+      width: 100%;
+      padding-top: 2em;
+      ul{
+        width: 100%;
+        margin-top: 0;
+        li{
+          list-style-type: none;
+          display: inline-block;
+          text-align: right;
+          //padding-bottom: 1em;
+          &:not(:last-child){
+            margin-right: 1em;
+          }
+          a{
+            text-decoration: none;
+            font-size: 1em;
+            color: $b;
+            padding-bottom: 0.1em;
+            transition: color 0.15s linear,box-shadow 0.2s ease-in-out;
+            &:hover {
+              color: white;
+              box-shadow: 0px 3px 0px 0px $purple;
+            }          
+          }
+          &:nth-of-type(2){
+            a{
+              &:hover {
+                box-shadow: 0px 3px 0px 0px $dark;
+              }          
+            }
+          }
+          &:nth-of-type(3){
+            a{
+              &:hover {
+                box-shadow: 0px 3px 0px 0px $icons;
+              }          
+            }
           }
         }
       }
@@ -100,25 +120,21 @@ header {
 .hero {
   padding-top: 0.001em;
   z-index: -222;
-  height: 100vh;
+  height: calc(100vh - 80px);
   position: relative;
   background: url(http://i.imgur.com/bTmWfSR.png);
   background-color: rgba(0, 0, 0, 0.87);
-  height: calc(100% - 70px);
   .wrapper {
     .col-1 {
-      //float: left;
+      float: left;
       margin-top: calc(50vh - 250px);
-      max-width: 50%;
-      position: relative;
-      left: -6em;
+      width: 40%;
       section {
         h1 {
           position: relative;
           text-align: right;
-          font-family: Calibri, serif;
-          font-size: 7em;
-          position: relative;
+          font-family: 'Raleway', sans-serif;
+          font-size: 8em;
           right: -0.8em;
           margin-bottom: 0;
           color: white;
@@ -126,13 +142,13 @@ header {
         }
         h3 {
           text-align: right;
-          font-family: Raleway;
           font-size: 1.6em;
           margin-top: 0;
           color: $text + 90;
           position: relative;
-          //text-indent: -3em
+          font-weight: normal;
           #desc {
+            font-weight: normal;
             transition: color 0.5s ease;
             box-shadow: 0 1px 0px 0px white;
             display: inline-block;
@@ -142,45 +158,33 @@ header {
         }
       }
     }
-    .col-2 {
-      z-index: -1;
-      margin: 0 auto;
-      max-width: 50%;
-      width: 50%;
-      position: absolute;
-      color: white;
-      top: calc(50vh - 380px);
-      left: 50%;
-      section {
-        h1 {
-          text-align: left;
-          font-size: 12em;
-          font-family: Calibri, serif;
-          margin-bottom: 0;
+    .col-2{
+      margin-top: calc(50vh - 200px);
+      text-align: center;
+      padding-right: 20%;
+      float: right;
+      width: 45%;
+      section{
+        img{
+          border-radius: 50%;
         }
-        h2 {
-          position: relative;
-          top: -5px;
-          color: $tex;
-          text-align: left;
-          text-indent: 50px;
-          margin-top: 0;
-          margin: 0;
-          font-size: 2.3em;
-          font-family: $r;
+        h2{
+          color: $b;
+          font-size: 2em;
+          margin: 10px 0 0 0;
           font-weight: normal;
-          i {
-            color: $dark;
-            margin: 0;
-            padding: 0;
+        }
+        h3{
+          margin-top: 0;
+          color: white;
+          font-weight: normal;
+          i{
             font-style: normal;
-            font-weight: bold;
-          }
-          b {
             color: $purple;
-            margin: 0;
-            padding: 0;
-            font-weight: bold;
+          }
+          b{
+            font-weight: normal;
+            color: $bl;
           }
         }
       }
@@ -188,16 +192,27 @@ header {
     p {
       font-family: $r;
       position: absolute;
+      margin: 0 auto;
       bottom: 1.5em;
       text-align: center;
-      width: 1000px;
+      width: 1100px;
       padding-bottom: 0em;
       bottom: 0em;
       a {
-        color: $tex;
+        text-decoration: none;
+        margin-bottom: 0;
+        //font-weight: bold;
+        color: $b;
         width: 30px;
         height: 30px;
+        span{
+          position: relative;
+          bottom: -5px;
+          text-transform: lowercase;
+        }
         i {
+          margin-top: 0;
+          margin-bottom: 10px;
           font-size: 1.5em;
         }
       }
@@ -327,33 +342,37 @@ main {
 
 /* Footer */
 footer {
-  background-color: #fff;
+  background-color: #333;
   position: relative;
-  box-shadow: 0 -1px 1px 0px  $tex;
+  height: 80px;
   .copyright {
     float: left;
-    font-family: Calibri;
-    padding: 0.5em 0 0.25em 0;
+    font-family: Raleway, Lato sans-serif;
+    padding: 24px 0 20px 0;
     margin: 0;
-    color: $tex;
-    font-weight: bold;
-    font-size: 1.2em;
+    color: $b;
+    font-weight: normal;
+    font-size: 1.75em;
     position: absolute;
     cursor: default;
     transition: all .25s linear;
+    span{
+      font-family: Lato, Raleway sans-serif;
+      font-size: 1.3rem;
+    }
     &:hover{
       opacity: 1;
-      color: $dark;
+      color: $bl;
     }
   }
   nav {
     float: right;
-    padding: 0.5em 0;
+    padding: 25px 0;
     a {
       font-size: 1.5em;
-      color: $tex;
+      color: $b;
       &:hover, &:focus, &:active {
-        color: $dark;
+        color: $bl;
       }
     }
     a:not(:last-child) {
@@ -364,7 +383,9 @@ footer {
 
 @media screen and (min-height: 850px) {
   main {
-    background: url(http://i.imgur.com/eGfvKzy.jpg) no-repeat 0% 50%; /* 2x img */
+    background: radial-gradient(circle at top right, orange 0%, rgba(0,0,0, 0) 15%),
+                linear-gradient(to top, $dark, rgba(0,0,0, 0)), 
+                url(http://i.imgur.com/eGfvKzy.jpg) no-repeat 0% 50%; /* 2x img */
     background-color: inherit;
   background-size: cover;
   }
@@ -404,14 +425,22 @@ footer {
 }
 
 
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus label{
+  font-weight: bold;
+}
 
 input[type="text"], input[type="email"], input[type="password"], textarea{
   width: 100%;
   max-width: 100%;
   height: 3em;
-  border: 2px solid $b;
+  border: 2px solid $border;
+  border-radius: 3px;
   padding: 1em;
   margin: .5em 0 2em 0;
+  &:focus{
+    border-color: $header-color;
+    outline: none;
+  }
 }
 
 textarea{
@@ -421,7 +450,7 @@ textarea{
 input[type="submit"], .button{
   outline: none;
   background: transparent;
-  border: 2px solid $tex;
+  border: 2px solid $header-color;
   text-align: center;
   font-size: 1em;
   font-weight: bold;
@@ -429,11 +458,11 @@ input[type="submit"], .button{
   padding: 1em 2em;
   margin: 0 0 2em 0;
   background-color: #fff;
-  color: $tex;
+  color: $header-color;
   transition: all .05s ease-in-out;
   &:hover{
     color: #FFF;
-    background-color: $tex;
+    background-color: $header-color;
   }
 }
 
@@ -484,9 +513,9 @@ hr{
   .date{
     text-align: center;
     margin: 0;
-    font-family: Calibri;
-    text-transform: uppercase;
-    color: $b
+    font-family: $lato;
+    font-weight: bold;
+    color: $border;
   }
   hr{
     margin: 0 47%;
@@ -567,13 +596,12 @@ hr{
   .title{
     text-align: center;
     .date{
-      font-size: .9em;
-      color: $light;
+      font-size: 1em;
+      color: $border;
       padding: 0;
       margin: 0;
-      color: #9a9da4;
-      font-family: Calibri;
-      text-transform: uppercase;
+      font-family: $lato;
+      font-weight: bold;
     }
     h2{
       font-size: 3em;

@@ -13,20 +13,21 @@
     <% end %> -->
 
 <div class="hero">
-    <div class="wrapper clearfix">
-      <div class="col-1 clearfix">
+    <div class="wrapper">
+      <div class="col-1">
         <section>
           <h1 id="hello">Hello</h1>
-          <h3>My name: Max. This is my &nbsp<strong id="desc">website</strong></h3>
+          <h3>My name is Max. This is my &nbsp<strong id="desc">website</strong></h3>
         </section>
       </div>
-      <div class="col-2 clearfix">
+      <div class="col-2">
         <section>
-          <h1>I'm</h1>
-          <h2><i>Developer</i> & <b>Designer</b></h2>
+          <img src="http://i.imgur.com/bqzXpcM.jpg" width="200px" height: 200px alt="maxslob">
+          <h2>I'm</h2>
+          <h3><i>Developer</i> & <b>Designer</b></h3>
         </section>
       </div>
-      <p><a href="#content"><i class="fa fa-angle-down"></i></a></p>
+      <p><a href="#content"><span>ABOUT</span><br><i class="fa fa-angle-down"></i></a></p>
     </div>
   </div>
 
@@ -43,7 +44,7 @@
           </p><p>
           I have a good knowledge of front-end. I'm intensively improving them.
           </p><p>
-          Spend a lot of time reading articles(even books), watching tutorials & consolidate my knowledge in practice.
+          Spend a lot of time reading articles(even books), watching tutorials & consolidating my knowledge on practice.
           </p><p>
           For now i learn back-end based on Ruby on Rails and advanced css & js.
           </p>
@@ -146,7 +147,7 @@
   </main>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script>
-    setTimeout(desc, 1500);
+    setTimeout(desc, 2500);
     function hide(){
       $('#desc').animate({'opacity': '0'}, 2500);
     }
@@ -162,8 +163,8 @@
       hide();}
     }
     function desc2(){
-      $('#desc').html('portfolio').css('box-shadow', '0 1px 0 0 #b232b2');
-      $('#hello').css('color',"#b232b2");
+      $('#desc').html('portfolio').css('box-shadow', '0 1px 0 0 #BB3E3E');
+      $('#hello').css('color',"#BB3E3E");
       show();
       setTimeout(desc3, 5000);
       hide();

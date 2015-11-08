@@ -424,8 +424,8 @@ th {
 }
 
 #admin_links {
-  border-top: 1px solid #B6B6B6;
-  border-bottom: 1px solid #B6B6B6;
+  border-top: 1px solid #bfbfbf;
+  border-bottom: 1px solid #bfbfbf;
   text-align: center;
   padding: 1em 0;
   margin: 3em 0;
@@ -857,7 +857,7 @@ code {
 }
 
 .wrapper {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -868,90 +868,95 @@ body {
 
 /* Header */
 header {
-  z-index: 9999999999;
   width: 100%;
-  padding-bottom: 6.25em;
-  box-shadow: 0 1px 1px 1px #B6B6B6;
-  background-color: #03A9F4;
+  height: 80px;
+  background-color: #333;
 }
 
-header .logo {
-  font-family: Raleway, sans-serif;
-  margin-left: 40px;
-  font-size: 2em;
-  font-weight: 700;
-  padding: 1em 0em;
+header .wrapper a[href="/"] {
+  font-weight: bold;
   float: left;
-  color: white;
-}
-
-header .logo a {
+  text-align: left;
+  margin-right: auto;
   text-decoration: none;
-  color: white;
-  box-shadow: 0 2px 0px 0px white;
-}
-
-header .logo a:hover {
-  color: #BBDEFB;
-  box-shadow: 0 2px 0px 0px #BBDEFB;
-}
-
-header nav {
-  float: right;
-  padding: 1.3em 0;
-  z-index: 9999999999;
-}
-
-header nav ul li {
-  list-style-type: none;
-  display: inline-block;
-  padding: 0 0.5em;
-  margin: 0 0.5em;
-}
-
-header nav ul li:last-child {
-  margin-right: 0;
-}
-
-header nav ul li a {
-  z-index: 999999999;
-  color: #333333;
-  text-decoration: none;
-  font-family: Raleway, sans-serif;
   font-size: 1.3em;
   color: white;
-  padding-bottom: 0.2em;
-  transition: box-shadow 0.15s ease-in-out;
+  transition: color 0.15s ease-in-out;
+  margin-top: 28px;
+  color: rgba(255, 255, 255, 0.4);
 }
 
-header nav ul li a:hover {
+header .wrapper a[href="/"] span {
+  color: #03A9F4;
+}
+
+header .wrapper a[href="/"]:hover {
+  color: white;
+}
+
+header .wrapper nav {
+  text-align: right;
+  width: 100%;
+  padding-top: 2em;
+}
+
+header .wrapper nav ul {
+  width: 100%;
+  margin-top: 0;
+}
+
+header .wrapper nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  text-align: right;
+}
+
+header .wrapper nav ul li:not(:last-child) {
+  margin-right: 1em;
+}
+
+header .wrapper nav ul li a {
+  text-decoration: none;
+  font-size: 1em;
+  color: rgba(255, 255, 255, 0.4);
+  padding-bottom: 0.1em;
+  transition: color 0.15s linear, box-shadow 0.2s ease-in-out;
+}
+
+header .wrapper nav ul li a:hover {
+  color: white;
+  box-shadow: 0px 3px 0px 0px #BB3E3E;
+}
+
+header .wrapper nav ul li:nth-of-type(2) a:hover {
   box-shadow: 0px 3px 0px 0px #1976D2;
+}
+
+header .wrapper nav ul li:nth-of-type(3) a:hover {
+  box-shadow: 0px 3px 0px 0px #FFFFFF;
 }
 
 /* Hero */
 .hero {
   padding-top: 0.001em;
   z-index: -222;
-  height: 100vh;
+  height: calc(100vh - 80px);
   position: relative;
   background: url(http://i.imgur.com/bTmWfSR.png);
   background-color: rgba(0, 0, 0, 0.87);
-  height: calc(100% - 70px);
 }
 
 .hero .wrapper .col-1 {
+  float: left;
   margin-top: calc(50vh - 250px);
-  max-width: 50%;
-  position: relative;
-  left: -6em;
+  width: 40%;
 }
 
 .hero .wrapper .col-1 section h1 {
   position: relative;
   text-align: right;
-  font-family: Calibri, serif;
-  font-size: 7em;
-  position: relative;
+  font-family: 'Raleway', sans-serif;
+  font-size: 8em;
   right: -0.8em;
   margin-bottom: 0;
   color: white;
@@ -960,14 +965,15 @@ header nav ul li a:hover {
 
 .hero .wrapper .col-1 section h3 {
   text-align: right;
-  font-family: Raleway;
   font-size: 1.6em;
   margin-top: 0;
   color: #7b7b7b;
   position: relative;
+  font-weight: normal;
 }
 
 .hero .wrapper .col-1 section h3 #desc {
+  font-weight: normal;
   transition: color 0.5s ease;
   box-shadow: 0 1px 0px 0px white;
   display: inline-block;
@@ -976,68 +982,68 @@ header nav ul li a:hover {
 }
 
 .hero .wrapper .col-2 {
-  z-index: -1;
-  margin: 0 auto;
-  max-width: 50%;
-  width: 50%;
-  position: absolute;
-  color: white;
-  top: calc(50vh - 380px);
-  left: 50%;
+  margin-top: calc(50vh - 200px);
+  text-align: center;
+  padding-right: 20%;
+  float: right;
+  width: 45%;
 }
 
-.hero .wrapper .col-2 section h1 {
-  text-align: left;
-  font-size: 12em;
-  font-family: Calibri, serif;
-  margin-bottom: 0;
+.hero .wrapper .col-2 section img {
+  border-radius: 50%;
 }
 
 .hero .wrapper .col-2 section h2 {
-  position: relative;
-  top: -5px;
-  color: #424652;
-  text-align: left;
-  text-indent: 50px;
-  margin-top: 0;
-  margin: 0;
-  font-size: 2.3em;
-  font-family: Raleway, sans-serif;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 2em;
+  margin: 10px 0 0 0;
   font-weight: normal;
 }
 
-.hero .wrapper .col-2 section h2 i {
-  color: #1976D2;
-  margin: 0;
-  padding: 0;
-  font-style: normal;
-  font-weight: bold;
+.hero .wrapper .col-2 section h3 {
+  margin-top: 0;
+  color: white;
+  font-weight: normal;
 }
 
-.hero .wrapper .col-2 section h2 b {
-  color: #b232b2;
-  margin: 0;
-  padding: 0;
-  font-weight: bold;
+.hero .wrapper .col-2 section h3 i {
+  font-style: normal;
+  color: #BB3E3E;
+}
+
+.hero .wrapper .col-2 section h3 b {
+  font-weight: normal;
+  color: #03A9F4;
 }
 
 .hero .wrapper p {
   font-family: Raleway, sans-serif;
   position: absolute;
+  margin: 0 auto;
   bottom: 1.5em;
   text-align: center;
-  width: 1000px;
+  width: 1100px;
   padding-bottom: 0em;
   bottom: 0em;
 }
 
 .hero .wrapper p a {
-  color: #424652;
+  text-decoration: none;
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.4);
   width: 30px;
   height: 30px;
 }
 
+.hero .wrapper p a span {
+  position: relative;
+  bottom: -5px;
+  text-transform: lowercase;
+}
+
 .hero .wrapper p a i {
+  margin-top: 0;
+  margin-bottom: 10px;
   font-size: 1.5em;
 }
 
@@ -1067,7 +1073,7 @@ main .wrapper .col-1 section h2 {
 }
 
 main .wrapper .col-1 section small {
-  color: #B6B6B6;
+  color: rgba(255, 255, 255, 0.4);
   font-family: Calibri, serif;
   position: relative;
   top: -5px;
@@ -1086,7 +1092,7 @@ main .wrapper .col-1 section p {
 main .wrapper .col-1 section p strong {
   font-family: Raleway, sans-serif;
   font-size: 1.8em;
-  color: #b232b2;
+  color: #BB3E3E;
 }
 
 main .wrapper .col-2 {
@@ -1116,7 +1122,7 @@ main .wrapper .col-2 section:last-child {
 
 main .wrapper .col-2 section h3 {
   font-size: 1.8em;
-  color: #b232b2;
+  color: #BB3E3E;
   font-family: Raleway, sans-serif;
   margin: 0;
   text-align: center;
@@ -1126,7 +1132,7 @@ main .wrapper .col-2 section hr {
   margin: 1em 40%;
   margin-bottom: 2em;
   border-width: 2px;
-  border-color: #B6B6B6;
+  border-color: rgba(255, 255, 255, 0.4);
   border-top: 0;
   border-left: 0;
   border-right: 0;
@@ -1141,7 +1147,7 @@ main .wrapper .col-2 section ul, main .wrapper .col-2 section ol {
 }
 
 main .wrapper .col-2 section ul li b, main .wrapper .col-2 section ol li b {
-  color: #B6B6B6;
+  color: rgba(255, 255, 255, 0.4);
 }
 
 main .wrapper .col-2 section ul > li {
@@ -1172,41 +1178,46 @@ main .wrapper .col-2 section ul > ol > ol > li {
 
 /* Footer */
 footer {
-  background-color: #fff;
+  background-color: #333;
   position: relative;
-  box-shadow: 0 -1px 1px 0px #424652;
+  height: 80px;
 }
 
 footer .copyright {
   float: left;
-  font-family: Calibri;
-  padding: 0.5em 0 0.25em 0;
+  font-family: Raleway, Lato sans-serif;
+  padding: 24px 0 20px 0;
   margin: 0;
-  color: #424652;
-  font-weight: bold;
-  font-size: 1.2em;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: normal;
+  font-size: 1.75em;
   position: absolute;
   cursor: default;
   transition: all 0.25s linear;
 }
 
+footer .copyright span {
+  font-family: Lato, Raleway sans-serif;
+  font-size: 1.3rem;
+}
+
 footer .copyright:hover {
   opacity: 1;
-  color: #1976D2;
+  color: #03A9F4;
 }
 
 footer nav {
   float: right;
-  padding: 0.5em 0;
+  padding: 25px 0;
 }
 
 footer nav a {
   font-size: 1.5em;
-  color: #424652;
+  color: rgba(255, 255, 255, 0.4);
 }
 
 footer nav a:hover, footer nav a:focus, footer nav a:active {
-  color: #1976D2;
+  color: #03A9F4;
 }
 
 footer nav a:not(:last-child) {
@@ -1215,7 +1226,7 @@ footer nav a:not(:last-child) {
 
 @media screen and (min-height: 850px) {
   main {
-    background: url(http://i.imgur.com/eGfvKzy.jpg) no-repeat 0% 50%;
+    background: radial-gradient(circle at top right, orange 0%, transparent 15%), linear-gradient(to top, #1976D2, transparent), url(http://i.imgur.com/eGfvKzy.jpg) no-repeat 0% 50%;
     /* 2x img */
     background-color: inherit;
     background-size: cover;
@@ -1253,13 +1264,23 @@ footer nav a:not(:last-child) {
   border-bottom: 1px solid #E9E9E9;
 }
 
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus label {
+  font-weight: bold;
+}
+
 input[type="text"], input[type="email"], input[type="password"], textarea {
   width: 100%;
   max-width: 100%;
   height: 3em;
-  border: 2px solid #B6B6B6;
+  border: 2px solid #bfbfbf;
+  border-radius: 3px;
   padding: 1em;
   margin: 0.5em 0 2em 0;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus {
+  border-color: #333333;
+  outline: none;
 }
 
 textarea {
@@ -1269,7 +1290,7 @@ textarea {
 input[type="submit"], .button {
   outline: none;
   background: transparent;
-  border: 2px solid #424652;
+  border: 2px solid #333333;
   text-align: center;
   font-size: 1em;
   font-weight: bold;
@@ -1277,13 +1298,13 @@ input[type="submit"], .button {
   padding: 1em 2em;
   margin: 0 0 2em 0;
   background-color: #fff;
-  color: #424652;
+  color: #333333;
   transition: all 0.05s ease-in-out;
 }
 
 input[type="submit"]:hover, .button:hover {
   color: #FFF;
-  background-color: #424652;
+  background-color: #333333;
 }
 
 /* POSTS STUFF */
@@ -1331,9 +1352,9 @@ hr {
 .post .date {
   text-align: center;
   margin: 0;
-  font-family: Calibri;
-  text-transform: uppercase;
-  color: #B6B6B6;
+  font-family: Lato, Raleway, sans-serif;
+  font-weight: bold;
+  color: #bfbfbf;
 }
 
 .post hr {
@@ -1426,13 +1447,12 @@ hr {
 }
 
 #post_show_content .title .date {
-  font-size: .9em;
-  color: #BBDEFB;
+  font-size: 1em;
+  color: #bfbfbf;
   padding: 0;
   margin: 0;
-  color: #9a9da4;
-  font-family: Calibri;
-  text-transform: uppercase;
+  font-family: Lato, Raleway, sans-serif;
+  font-weight: bold;
 }
 
 #post_show_content .title h2 {
