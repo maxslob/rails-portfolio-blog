@@ -1300,6 +1300,7 @@ hr {
 
 .skinny_wrapper {
   max-width: 650px;
+  min-height: calc(100% - 210px);
   margin: 0 auto;
 }
 
