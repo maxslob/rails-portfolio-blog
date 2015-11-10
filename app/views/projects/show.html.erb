@@ -2,7 +2,7 @@
    <div class="title"> 
       <h2><%= @project.title %></h2>
       <p class="date"><%= @project.created_at.strftime('%A, %B %d') %></p>
-      <hr>
+      <hr id="hr-darkred">
   </div>
 
     <div id="content">
@@ -14,7 +14,7 @@
       </div>   
     </div>
 
-    <hr>
+    <hr id="hr-red">
     <% if user_signed_in? %>
     <div id="admin_links">
       <%= link_to "Edit Project", edit_project_path(@project) %>
