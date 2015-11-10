@@ -58,21 +58,23 @@ header {
   background-color: #333;
   .wrapper{
     a[href="/"]{
-      font-weight: bold;
-      float: left;
-      text-align: left;
-      margin-right: auto;
-      text-decoration: none;
-      font-size: 1.3em;
-      color: white;
-      transition: color 0.15s ease-in-out;
-      margin-top: 28px;
-      color: $b;
-      span{
-        color: $bl;
-      }
-      &:hover{
+      h1{
+        font-weight: bold;
+        float: left;
+        text-align: left;
+        margin-right: auto;
+        text-decoration: none;
+        font-size: 1.3em;
         color: white;
+        transition: color 0.15s ease-in-out;
+        margin-top: 28px;
+        color: $b;
+        span{
+          color: $bl;
+        }
+        &:hover{
+          color: white;
+        }
       }
     }
     nav{
@@ -453,9 +455,15 @@ hr{
   border: 0;
   border-bottom: 3px solid $dark;
 }
+#hr-red{
+  border-bottom: 3px solid $purple + 30;
+}
+#hr-darkred{
+  border-bottom: 3px solid $purple;
+}
 
 .skinny_wrapper{
-  width: 80%;
+  max-width: 650px;
   margin: 0 auto;
   hr{
     //margin: 1em 45% 2.5em 45%;

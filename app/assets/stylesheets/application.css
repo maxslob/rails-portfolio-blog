@@ -878,7 +878,7 @@ header {
   background-color: #333;
 }
 
-header .wrapper a[href="/"] {
+header .wrapper a[href="/"] h1 {
   font-weight: bold;
   float: left;
   text-align: left;
@@ -891,11 +891,11 @@ header .wrapper a[href="/"] {
   color: rgba(255, 255, 255, 0.4);
 }
 
-header .wrapper a[href="/"] span {
+header .wrapper a[href="/"] h1 span {
   color: #03A9F4;
 }
 
-header .wrapper a[href="/"]:hover {
+header .wrapper a[href="/"] h1:hover {
   color: white;
 }
 
@@ -1290,8 +1290,16 @@ hr {
   border-bottom: 3px solid #1976D2;
 }
 
+#hr-red {
+  border-bottom: 3px solid #d95c5c;
+}
+
+#hr-darkred {
+  border-bottom: 3px solid #BB3E3E;
+}
+
 .skinny_wrapper {
-  width: 80%;
+  max-width: 650px;
   margin: 0 auto;
 }
 
