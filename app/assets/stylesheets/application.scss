@@ -214,7 +214,6 @@ header {
         span{
           position: relative;
           bottom: -5px;
-          text-transform: lowercase;
         }
         i {
           margin-top: 0;
@@ -652,6 +651,216 @@ hr{
 
 /* RESPONSIVE */
 
-.wrapper{
-  width: 95%;
+@media screen and (max-width: 1200px){
+  .wrapper{
+    width: 95%;
+  }
+}
+
+#menu-button{
+  display: none;
+}
+
+#hero-text2{
+  display: none;
+}
+
+#mobile-menu{
+  display: none;
+}
+
+/* a[rel="nofollow"]{
+  display: block;
+  width: 100%;
+  height: 60px;
+  background-color: $purple;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 2.5em;
+} */
+
+@media screen and (max-width: 925px){
+
+  /* MENU */
+  #mobile-menu{
+    display: block;
+    width: 60%;
+    background-color: rgba(0,0,0, .7);
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    li{
+      display: block;
+      padding: 15px 10px;
+      padding-right: 0px;
+      //transform: translatex(300px);
+      &:first-child{
+        margin-top: 1em;
+      }
+      &:hover{
+        background-color: #fff;
+      }
+      a{
+        display: block;
+        width: 100%;
+        height: 100%;
+        box-shadow: none;
+        color: $b;
+        font-size: 1.5em;
+      }
+    }
+  }
+
+
+  #hero-text2{
+    display: block;
+  }
+  #hero-text{
+    display: none;
+  }
+
+  /* HERO */
+  .hero {
+    padding-top: 0.001em;
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    height: 600px;
+    position: relative;
+    background: url(http://i.imgur.com/bTmWfSR.png);
+    background-color: #333 - 15;
+    .wrapper {
+      .col-1 {
+        display: block;
+        margin-top: 0em;
+        width: 100%;
+        section {
+          h1 {
+            position: static;
+            text-align: center;
+            font-size: 6em;
+            right: default;
+            margin-bottom: 0;
+          }
+          h3 {
+            text-align: center;
+            font-size: 1.6em;
+            position: static;
+            font-weight: normal;
+          }
+        }
+      }
+      .col-2{
+        display: block;
+        margin-top: 2em;
+        text-align: center;
+        padding-right: 0%;
+        width: 100%;
+        section{
+          img{
+            border-radius: 50%;
+          }
+          h2{
+            color: $b;
+            font-size: 2em;
+            margin: 10px 0 0 0;
+            font-weight: normal;
+            display: none;
+          }
+          h3{
+            margin-top: 2em;
+            color: $b;
+            font-weight: bold;
+            i{
+              font-style: bold;
+              color: #BB3E3E;
+            }
+            b{
+              font-weight: bold;
+              color: $bl;
+            }
+          }
+        }
+      }
+      p {
+        display: none;
+      }
+    }
+  }
+
+
+
+  /* HEADER */
+  header{
+    .wrapper{
+      nav{
+        .menu{
+          display: none;
+        }
+        #menu-button{
+          display: inline-block;
+          outline: 0;
+          border: 0;
+          background-color: #333;
+          color: white;
+          font-size: 1.5em;
+          position: relative;
+          top: -5px;
+        }
+      }
+    }
+  }
+
+  #main-content{
+    display: block;
+    section{
+      margin-top: 5em;
+      width: 100%;
+      &:nth-of-type(3){
+        span{
+          font-size: 2.6em;
+        }
+      }
+      span{
+        font-size: 3em;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        position: relative;
+        top: 5px
+      }
+      h2{
+        font-size: 2em;
+        margin-bottom: 1em;
+      }
+      hr{
+        display: none;
+      }
+      ul{
+        li{
+          width: 90%;
+          left: 0;
+          font-size: 1.3em;
+          padding: 10px 16px;
+          box-shadow: none;
+        }
+        li:before{
+          transition: all 0.10s linear;
+          height: 3px;
+          width: 12px;
+          margin-bottom: 4px;
+          margin-right: 6px;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 580px){
+  .fa-hand-pointer-o{
+    display: none;
+  }
 }

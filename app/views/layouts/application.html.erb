@@ -6,16 +6,18 @@
 
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
-  <!-- FONTS END -->
+
+  <!-- VIEWPORT -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- FAVICON & FONTAWESOME -->
 
   <link rel="icon" href="http://i.imgur.com/yEAcqII.png">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-  <!-- FAVICON & FONTAWESOME END -->
 
+  <!-- STYLESHEETS & JS -->
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <!-- <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %> -->
   <%= csrf_meta_tags %>
 
   <meta name="author" content="maxslob">
@@ -39,16 +41,21 @@
    <div class="wrapper">
       <a href="/"><h1>maxslob<span>.me</span></h1></a>
       <nav>
-        <ul>
+        <ul id="mobile-menu">
+           <li><%= link_to "Projects", projects_path %></li>
+           <li><%= link_to "Blog", posts_path %></li></li>
+           <li><%= link_to "Contact", new_contact_path %></li>
+         </ul> 
+        <ul class="menu">
           <li><%= link_to "Expeirence & Work", projects_path %></li>
           <li><%= link_to "Blog", posts_path %></li>
           <li><%= link_to "Contact", new_contact_path %></li>
           <li>
-            <% if user_signed_in? %>
+             <% if user_signed_in? %>
               <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
             <% end %>
-          </li>
         </ul>
+        <button id="menu-button"><i class="fa fa-bars"></i></button>
       </nav>  
     </div>
   </header>
@@ -72,5 +79,12 @@
       </nav>
     </div>
   </footer>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script>
+    /*MENU FUNCTIONALITY*/
+    $('#menu-button').click(function(){
+
+    });
+  </script>
 </body>
 </html>
