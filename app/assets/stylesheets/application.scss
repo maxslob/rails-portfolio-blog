@@ -684,31 +684,21 @@ hr{
 
   /* MENU */
   #mobile-menu{
-    display: block;
-    width: 60%;
-    background-color: rgba(0,0,0, .7);
-    height: 100%;
+    display: none;
+    width: 100%;
+    background-color: $bl;
     position: absolute;
-    right: 0;
     top: 0;
+    right: 0;
     li{
+      margin-top: 0.5em;
       display: block;
-      padding: 15px 10px;
-      padding-right: 0px;
-      //transform: translatex(300px);
-      &:first-child{
-        margin-top: 1em;
-      }
-      &:hover{
-        background-color: #fff;
-      }
+      padding: 20px 0;
+      font-size: 2em;
+      text-align: center;
       a{
-        display: block;
-        width: 100%;
-        height: 100%;
-        box-shadow: none;
-        color: $b;
-        font-size: 1.5em;
+        color: white;
+        font-weight: bold;
       }
     }
   }
@@ -807,6 +797,10 @@ hr{
           font-size: 1.5em;
           position: relative;
           top: -5px;
+          transition: background-color 0.2s linear;
+          &.active{
+            background-color: $bl;
+          }
         }
       }
     }
