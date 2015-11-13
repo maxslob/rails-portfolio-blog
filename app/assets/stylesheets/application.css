@@ -1552,6 +1552,65 @@ hr {
   #hero-text {
     display: none;
   }
+  #page_title {
+    font-size: 2.4em;
+  }
+  .skinny_wrapper {
+    width: 95%;
+  }
+  #post_show_content .title h2 {
+    font-size: 2rem;
+  }
+  #post_show_content .title p {
+    font-size: 0.8rem;
+  }
+  #post_show_content #content h1, #post_show_content #content #description h1 {
+    font-size: 2rem;
+  }
+  #post_show_content #content h2, #post_show_content #content #description h2 {
+    font-size: 1.8rem;
+  }
+  #post_show_content #content h3, #post_show_content #content #description h3 {
+    font-size: 1.6rem;
+  }
+  #post_show_content #content h4, #post_show_content #content #description h4 {
+    font-size: 1.4rem;
+  }
+  #post_show_content #content h5, #post_show_content #content #description h5 {
+    font-size: 1.2rem;
+  }
+  #post_show_content #content h6, #post_show_content #content #description h6 {
+    font-size: 1rem;
+  }
+  #post_show_content #content p, #post_show_content #content ol, #post_show_content #content ul, #post_show_content #content li, #post_show_content #content #description p, #post_show_content #content #description ol, #post_show_content #content #description ul, #post_show_content #content #description li {
+    font-size: 1.2rem;
+  }
+  .post h2 {
+    font-size: 1rem;
+  }
+  .post p {
+    font-size: 0.8rem;
+  }
+  footer {
+    font-size: 0.7rem;
+  }
+  footer .copyright {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    position: relative;
+    bottom: 5px;
+  }
+  footer .copyright span {
+    font-size: 1.02rem;
+    display: block;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  footer nav {
+    position: relative;
+    top: 0px;
+    font-size: 1rem;
+  }
   /* HERO */
   .hero {
     padding-top: 0.001em;
