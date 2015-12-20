@@ -1,0 +1,51 @@
+<div class="mobile-nav">
+    <header id="mobile-header">
+      <div class="mobile-logo">
+        <a href="/"><%= image_tag("test.svg", :alt => "logo", class: "logo") %></a>
+      </div>
+      <h4 class="mobile-title">ABOUT ME</h4>
+      <button class="menu-btn" id="menu-btn">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+    <nav id="mobile-menu">
+      <ul>
+        <li><%= link_to "About", home_index_path %></li>
+        <li><%= link_to "Portfolio", projects_path %></li>
+        <li><%= link_to "Blog", posts_path %></li>
+        <li><%= link_to "Contact", new_contact_path %></li>
+        <% if user_signed_in? %>
+        <li>
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+        </li>
+        <% end %>
+      </ul>
+    </nav>
+  </div> <!-- mobile-nav end-->
+
+
+  <button id="mainMenuOpener">MENU</button>
+  <div class="sidebar">
+    <div class="logo">
+      <a href="/"><%= image_tag("test.svg", :alt => "logo", class: "logo-img") %></a>
+      <div id="logo">maxslob.me</div>
+    </div>
+    <nav>
+      <ul id="desktopMenu">
+        <li><%= link_to "About", home_index_path, class: "selected" %></li>
+        <li><%= link_to "Portfolio", projects_path %></li>
+        <li><%= link_to "Blog", posts_path %></li>
+        <li><%= link_to "Contact", new_contact_path %></li>
+        <% if user_signed_in? %>
+        <li>
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+        </li>
+        <% end %>
+      </ul>
+    </nav>
+    <div class="social">
+      <a href="https://twitter.com/max_slob" target="_blank"><span class="fa fa-twitter"></span></a>
+      <a href="https://github.com/maxslob/rails-portfolio-blog" target="_blank"><span class="fa fa-github"></span></a>
+      <a href="https://www.linkedin.com/in/maxslob" target="_blank"><span class="fa fa-linkedin"></span></a>
+    </div>
+  </div> <!-- sidebar end -->
