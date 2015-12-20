@@ -1457,6 +1457,12 @@ th {
   width: 500px;
 }
 
+.container .item .item-info .proj-image .b-p-title {
+  display: block;
+  width: 600px;
+  font-size: 2em;
+}
+
 .container .item .item-info .proj-image .img {
   position: relative;
 }
@@ -1512,6 +1518,12 @@ th {
 
 .container .item .item-info .blog-image {
   width: 300px;
+}
+
+.container .item .item-info .blog-image .b-p-title {
+  display: block;
+  width: 600px;
+  font-size: 2em;
 }
 
 .container .item .item-info .blog-image .img {
@@ -1572,6 +1584,8 @@ th {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  position: relative;
+  top: 2.3em;
 }
 
 .container .item .item-info .row h4 {

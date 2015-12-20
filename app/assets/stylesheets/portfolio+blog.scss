@@ -41,6 +41,11 @@
       }
       .proj-image{
         width: 500px;
+        .b-p-title{
+          display: block;
+          width: 600px;
+          font-size: 2em;
+        }
         .img{
           position: relative;
           img{
@@ -55,6 +60,11 @@
       }
       .blog-image{
         width: 300px;
+        .b-p-title{
+          display: block;
+          width: 600px;
+          font-size: 2em;
+        }
         .img{
           position: relative;
           img{
@@ -75,6 +85,8 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        position: relative;
+        top: 2.3em;
       }
       .row{
         h4{
