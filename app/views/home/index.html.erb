@@ -12,164 +12,246 @@
       <p class="date"><%= post.created_at.strftime("%A, %b %d") %></p>
     <% end %> -->
 
-<div class="hero">
-    <div class="wrapper">
-      <div class="col-1">
-        <section>
-          <h1 id="hello">Hello</h1>
+<%= stylesheet_link_tag 'app', media: 'all', 'data-turbolinks-track' => true %>
+<title>Young Designer & Developer</title>
+</head>
+<body>
+  
 
-          <h3 id="hero-text">My name is Max. This is my &nbsp;
-          <strong id="desc">website</strong><!-- <span>I am a designer</span> -->
-          </h3>
-          <h3 id="hero-text2">
-            I'm Max From Minsk,Belarus.<br>
-            This is my personal website.
-          </h3>
-        </section>
+  <div class="mobile-nav">
+    <header id="mobile-header">
+      <div class="mobile-logo">
+        <a href="#"><%= image_tag("test.svg", :alt => "logo", class: "logo") %></a>
       </div>
-      <div class="col-2">
-        <section>
-          <img src="http://i.imgur.com/bqzXpcM.jpg" width="200px" height: 200px alt="maxslob">
-          <h2>I'm</h2>
-          <h3><i>Developer</i> & <b>Designer</b></h3>
-        </section>
-      </div>
-      <p><a href="#content"><span>More</span><br><i class="fa fa-angle-down"></i></a></p>
+      <h4 class="mobile-title">ABOUT ME</h4>
+      <button class="menu-btn" id="menu-btn">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+    <nav id="mobile-menu">
+      <ul>
+        <li><%= link_to "About", home_index_path %></li>
+        <li><%= link_to "Portfolio", projects_path %></li>
+        <li><%= link_to "Blog", posts_path %></li>
+        <li><%= link_to "Contact", new_contact_path %></li>
+        <% if user_signed_in? %>
+        <li>
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+        </li>
+        <% end %>
+      </ul>
+    </nav>
+  </div> <!-- mobile-nav end-->
+
+
+  <button id="mainMenuOpener">MENU</button>
+  <div class="sidebar">
+    <div class="logo">
+      <a href="#"><%= image_tag("test.svg", :alt => "logo", class: "logo-img") %></a>
+      <div id="logo">maxslob.me</div>
+    </div>
+    <nav>
+      <ul id="desktopMenu">
+        <li><%= link_to "About", home_index_path, class: "selected" %></li>
+        <li><%= link_to "Portfolio", projects_path %></li>
+        <li><%= link_to "Blog", posts_path %></li>
+        <li><%= link_to "Contact", new_contact_path %></li>
+        <% if user_signed_in? %>
+        <li>
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+        </li>
+        <% end %>
+      </ul>
+    </nav>
+    <div class="social">
+      <a href="#"><span class="fa fa-twitter"></span></a>
+      <a href="#"><span class="fa fa-github"></span></a>
+      <a href="#"><span class="fa fa-linkedin"></span></a>
+    </div>
+  </div> <!-- sidebar end -->
+
+  <!-- ABOUT ME MAIN PAGE -->
+  <div class="wrapper">
+  <div class="hero">
+    <img src="http://i.imgur.com/BhqXPXK.jpg" id="me" alt="my-photo">
+    <div class="greeting">
+      <span>Hello!</span>
+      <h2>My name is Max.</h2>
+      <h2>I'm Young Developer & Designer</h2>
+      <h2>From Minsk, Belarus</h2>
+      <a href="#">Hire Me</a>
     </div>
   </div>
-
-  <a id="content"></a>
-  <main class="clearfix">
-      <h1>What do I know?</h1>
-      <div id="main-content" class="wrapper">
-          <section>
-            <span>1</span><h2>Front End</h2>
-            <hr>
-            <ul>
-              <li>HTML5</li>
-              <ul><li>Jade, Microdata,  Forms</li></ul>
-              <li>CSS3</li>
-              <ul>
-                <li>Bootstrap, 
-                 Sass
-                 Bourbon/Stylus </li>
-              </ul>
-              <li>JavaScript</li>
-              <ul>
-                <li>jQuery </li>
-                <li>Angular.js</li>
-                <ul>
-                  <li>MVC, 
-                  Directives, 
-                  Controllers,
-                  Services</li>
-                </ul>
-                <li>CoffeeScript, 
-                JSON (APIs)</li>
-              </ul>
-            </ul>
-          </section>
-
-          <section>
-            <span>2</span><h2>Design</h2>
-            <hr>
-            <ul>
-              <li>UI, UX</li>
-              <li>Responsive Design</li>
-              <ul>
-                <li>Layout, 
-                Images</li>
-              </ul>
-              <li>Typography</li>
-              <li>Color scheme</li>
-              <li>Graphics</li>
-              <ul>
-                <li>Photoshop</li>
-                <ul>
-                  <li>Raster graphics</li>
-                </ul>
-                <li>Illustrator</li>
-                <ul>
-                  <li>Vector graphics</li>
-                </ul>
-              </ul>
-            </ul>
-          </section>
-
-          <section>
-            <span>3</span><h2>Back End & Other</h2>
-            <hr>
-            <ul>
-              <li>Ruby on Rails (Basics)</li>
-              <ul>
-                <li>MVC, 
-                Models, 
-                Views, 
-                Controllers, 
-                Helpers</li>
-              </ul>
-              <li>Also GIT</li>
-              <ul>
-                <li>Checkout, 
-                Merge,  
-                GitHub</li>
-              </ul>
-              <li>English Level</li>
-              <ul>
-                <li>Upper Intermediate</li>
-              </ul>
-            </ul>
-          </section>
+    <h3>ABOUT ME</h3>
+    <p class="main-paragraph" id="main-paragraph">
+      Last year (2015) I spent learning large bunch of stuff, I've realized that College wont make me a professional or just good at this moreover they want me to go to army, and I must go to the university to avoid it. I'm <b>looking for a job</b> for evenings remote or local, I also <b>want to study, live, work abroad on English language</b>, <b>if you want to help me with english, education, relocation, emigration, I will be very grateful =).</b> What about <b>my knowledge</b>? I do <b>web developing</b>, front-end mostly, I feel myself good at it and I <b>enjoy</b> doing it. Check out my education 
+      <span style="position: relative"><span class="tooltip" title="My journey into developing starts from my college where I got the understanding of computer programming. I’ve started from C, then C++ & Java, but at home I learned JS, I've started from html then css, sass, git, design, js, jQuery, Ps & Ai and a lot more technologies, frameworks... I liked that more than desktop programming, because of it's simplicity + I don't need to install IDE's and have a powerfull PC to get started. Then, I’ve been learning basics of Front-End & Design. Now I've solid understanding of how to design & build a website from zero. Everything must be shown on this website. I want to be able to Design and Create a website by myself.">background.</span></span>
+       I spend my freetime by learning new, designing, building, travelling, cycling, playing soccer. Enjoy the site! <span id="text">more</span>
+    </p>
+    <div class="cols">
+      <div class="col">
+        <h2>SKILLS</h2>
+        <button id="modalOpenBtn">OPEN</button>
       </div>
-  </main>
-  <script>
-    setTimeout(desc, 2500);
-    function hide(){
-      $('#desc').animate({'opacity': '0'}, 2500);
-    }
-    function show(){
-      $('#desc').animate({'opacity': '1'}, 2500);
-    }
-    function desc(){
-      if($('#desc')){
-      $('#desc').html('blog').css('box-shadow', '0 1px 0 0 #1976D2');
-      $('#hello').css('color',"#1976D2");
-      show();
-      setTimeout(desc2, 5000);
-      hide();}
-    }
-    function desc2(){
-      $('#desc').html('portfolio').css('box-shadow', '0 1px 0 0 #BB3E3E');
-      $('#hello').css('color',"#BB3E3E");
-      show();
-      setTimeout(desc3, 5000);
-      hide();
-    }
-    function desc3(){
-      $('#desc').html('website').css('box-shadow', '0 1px 0 0 white');
-      show();
-      setTimeout(desc, 5000);
-      hide();
-      $('#hello').css('color',"white");
-    }
-  </script>
-  <script type="text/javascript" charset="utf-8">
-    $('a[href^="#"]').on('click',function (e) {
-          e.preventDefault();
+      <div class="col">
+        <h2>PORTFOLIO</h2>
+        <a href="/projects"><button>OPEN*</button></a>
+      </div>
+      <div class="col">
+        <h2>BLOG</h2>
+        <a href="/posts"><button>OPEN*</button></a>
+      </div>
+    </div>
 
-          var target = this.hash;
-          var $target = $(target);
+    <div class="extra-menu">
 
-          $('html, body').stop().animate({
-              'scrollTop': $target.offset().top
-          }, 200, 'swing', function () {
-              window.location.hash = target;
-          });
-      });
-  </script>
-<!-- <script>
-    $('body').append('<div id="loader"></div>');
-    $(window).load(function(){
-    $("#loader").fadeOut("slow");
-    });
-</script> -->
+      <div class="item">
+        <span>SKILLS</span>
+        <a href="#">OPEN</a>
+      </div>
+
+      <div class="item">
+        <span>PORTFOLIO</span>
+        <a href="#">OPEN</a>
+      </div>
+
+      <div class="item">
+        <span>BLOG</span>
+        <a href="#">OPEN</a>
+      </div>
+
+      <div class="item">
+        <span>CONTACT</span>
+        <a href="#">OPEN</a>
+      </div>
+
+    </div> <!-- EXTRA-MENU END -->
+    <div class="social">
+      <a href="#"><span class="fa fa-twitter"></span></a>
+      <a href="#"><span class="fa fa-github"></span></a>
+      <a href="#"><span class="fa fa-linkedin"></span></a>
+    </div>
+  </div> <!-- WRAPPER END -->
+
+  <div class="modal">
+    <h2>SKILLS</h2>
+    <div class="container">
+      <div class="col">
+        <h3>FRONT-END</h3>
+        <span>HTML, CSS, JS</span>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li id="empty"></li>
+        </ul>
+
+        <span>jQuery</span>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li id="empty"></li>
+        </ul>
+
+        <span>Angular.js</span>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li id="empty"></li>
+          <li id="empty"></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h3>DESIGN</h3>
+        <span>Web Design</span>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li id="empty"></li>
+        </ul>
+
+        <span>UI, UX</span>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li id="empty"></li>
+          <li id="empty"></li>
+        </ul>
+
+        <span>Illustrator</span>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li id="empty"></li>
+          <li id="empty"></li>
+        </ul>
+
+        <span>Photoshop</span>
+        <ul>
+          <li></li>
+          <li></li>
+          <li id="empty"></li>
+          <li id="empty"></li>
+          <li id="empty"></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3>OTHER</h3>
+        <span>Ruby on Rails</span>
+        <ul>
+          <li></li>
+          <li id="empty"></li>
+          <li id="empty"></li>
+          <li id="empty"></li>
+          <li id="empty"></li>
+        </ul>
+
+        <span>SEO</span>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li id="empty"></li>
+        </ul>
+
+        <span>Git</span>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li id="empty"></li>
+        </ul>
+
+        <span>Testing</span>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li id="empty"></li>
+        </ul>
+
+        <span>C, C++, Java</span>
+        <ul>
+          <li></li>
+          <li></li>
+          <li id="empty"></li>
+          <li id="empty"></li>
+          <li id="empty"></li>
+        </ul>
+      </div>
+    </div>
+    <button id="close"><span class="fa fa-close"></span></button>
+  </div>
+  

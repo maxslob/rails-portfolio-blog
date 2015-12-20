@@ -1,16 +1,87 @@
-<div class="wrapper skinny_wrapper">
-  <h1 id="page_title">Latest Posts</h1>
-  <hr>
+<%= stylesheet_link_tag 'app', media: 'all', 'data-turbolinks-track' => true %>
+<title>My Blog</title>
+</head>
+<body>
 
-<% @posts.each do |post| %>
-	<div class="post">
-	  <h2><a href="#"><%= link_to post.title, post %></a></h2>
-    <p class="date"><%= post.created_at.strftime('%A, %B %d') %></p>
-	  <hr>
+  <div class="mobile-nav">
+    <header id="mobile-header">
+      <div class="mobile-logo">
+        <a href="#"><%= image_tag("test.svg", :alt => "logo", class: "logo") %></a>
+      </div>
+      <h4 class="mobile-title">ABOUT ME</h4>
+      <button class="menu-btn" id="menu-btn">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+    <nav id="mobile-menu">
+      <ul>
+        <li><%= link_to "About", home_index_path %></li>
+        <li><%= link_to "Portfolio", projects_path %></li>
+        <li><%= link_to "Blog", posts_path %></li>
+        <li><%= link_to "Contact", new_contact_path %></li>
+        <% if user_signed_in? %>
+        <li>
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+        </li>
+        <% end %>
+      </ul>
+    </nav>
+  </div> <!-- mobile-nav end-->
+
+
+  <button id="mainMenuOpener">MENU</button>
+  <div class="sidebar">
+    <div class="logo">
+      <a href="#"><%= image_tag("test.svg", :alt => "logo", class: "logo-img") %></a>
+      <div id="logo">maxslob.me</div>
+    </div>
+    <nav>
+      <ul id="desktopMenu">
+        <li><%= link_to "About", home_index_path %></li>
+        <li><%= link_to "Portfolio", projects_path %></li>
+        <li><%= link_to "Blog", posts_path, class: "selected" %></li>
+        <li><%= link_to "Contact", new_contact_path %></li>
+        <% if user_signed_in? %>
+        <li>
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+        </li>
+        <% end %>
+      </ul>
+    </nav>
+    <div class="social">
+      <a href="#"><span class="fa fa-twitter"></span></a>
+      <a href="#"><span class="fa fa-github"></span></a>
+      <a href="#"><span class="fa fa-linkedin"></span></a>
+    </div>
+  </div> <!-- sidebar end -->
+
+  <div class="container">
+  <h2>My Blog</h2>
+
+  <div class="item">
+
+    <% @posts.each do |post| %>
+    <div class="item-info">
+      
+      <div class="image blog-image">
+        <figure>
+          <span style="font-size: 2em"><%= link_to post.title, post %></span>
+          <div class="img">
+            <div class="hover"><%= link_to "FULL POST", post %></div>
+            <img src="http://i.imgur.com/JXbp83C.jpg" alt="project" />
+          </div>
+          <figcaption><%= post.created_at.strftime('%b %d, %Y') %></figcaption>
+        </figure>
+      </div>
+      <div class="description" style="position: relative; top: 2.3em;">
+        <div class="row">
+          <h4>Description</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo possimus laboriosam doloribus dignissimos voluptas, dele, cupiditate numquam temporibus placeat nulla harum obcaecati eum. Vel, magnam officia dicta. Possimus, cum. Nesciunt.</p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+
   </div>
-<% end %>
-
-	
-</div> <!-- post-wrapper -->
-
-<%= will_paginate @posts %>
+  
+</div>

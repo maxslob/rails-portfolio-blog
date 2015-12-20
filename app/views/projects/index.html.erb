@@ -1,14 +1,93 @@
-<div class="wrapper skinny_wrapper">
-<h1 id="page_title">The Stuff I've Built</h1>
-<hr id="hr-darkred">
+<%= stylesheet_link_tag 'app', media: 'all', 'data-turbolinks-track' => true %>
+<title>My Portfolio</title>
+</head>
 
-<% @projects.each do |project| %>
-  <div class="post">
-    <h2><a href="#"><%= link_to project.title, project %></a></h2>
-    <p class="date"><%= project.created_at.strftime('%A, %B %d') %></p>
-    <hr id="hr-red">
-  </div>
-<% end %>
+<body>
 
+  <div class="mobile-nav">
+    <header id="mobile-header">
+      <div class="mobile-logo">
+        <a href="#"><%= image_tag("test.svg", :alt => "logo", class: "logo") %></a>
+      </div>
+      <h4 class="mobile-title">ABOUT ME</h4>
+      <button class="menu-btn" id="menu-btn">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+    <nav id="mobile-menu">
+      <ul>
+        <li><%= link_to "About", home_index_path %></li>
+        <li><%= link_to "Portfolio", projects_path %></li>
+        <li><%= link_to "Blog", posts_path %></li>
+        <li><%= link_to "Contact", new_contact_path %></li>
+        <% if user_signed_in? %>
+        <li>
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+        </li>
+        <% end %>
+      </ul>
+    </nav>
+  </div> <!-- mobile-nav end-->
+
+
+  <button id="mainMenuOpener">MENU</button>
+  <div class="sidebar">
+    <div class="logo">
+      <a href="#"><%= image_tag("test.svg", :alt => "logo", class: "logo-img") %></a>
+      <div id="logo">maxslob.me</div>
+    </div>
+    <nav>
+      <ul id="desktopMenu">
+        <li><%= link_to "About", home_index_path %></li>
+        <li><%= link_to "Portfolio", projects_path, class: "selected" %></li>
+        <li><%= link_to "Blog", posts_path %></li>
+        <li><%= link_to "Contact", new_contact_path %></li>
+        <% if user_signed_in? %>
+        <li>
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+        </li>
+        <% end %>
+      </ul>
+    </nav>
+    <div class="social">
+      <a href="#"><span class="fa fa-twitter"></span></a>
+      <a href="#"><span class="fa fa-github"></span></a>
+      <a href="#"><span class="fa fa-linkedin"></span></a>
+    </div>
+  </div> <!-- sidebar end -->
+
+  <div class="container">
+  <h2>Projects</h2>
+
+  <div class="item">
   
-</div> <!-- post-wrapper -->
+  <% @projects.each do |project| %>
+  <div class="item-info">
+      
+      <div class="image proj-image">
+        <figure>
+          <span style="font-size: 2em"><%= link_to project.title, project %></span>
+          <div class="img">
+            <div class="hover"><%= link_to "OPEN", project %></div>
+            <img src="http://i.imgur.com/SekwlLal.png" alt="project" />
+          </div>
+          <figcaption><%= project.created_at.strftime('%b %d, %Y') %></figcaption>
+        </figure>
+      </div>
+      <div class="description" style="position: relative; top: 2.3em;">
+        <div class="row">
+          <h4>Description</h4>
+          <p>This functionality will be available soon.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore numquam, atque ipsam. Quisquam commodi odit consequatur debitis, quas facere omnis!</p>
+        </div>
+        <div class="row">
+          <h4>Skills</h4>
+          <p>This functionality will be available soon.</p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+
+  </div>
+  
+</div>

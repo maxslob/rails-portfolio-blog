@@ -1,0 +1,92 @@
+@mixin hover-state() {
+  position: absolute;
+  display: flex;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 4px);
+  height: calc(100% - 9px);
+  left: 2px;
+  top: 2px;
+  background-image: linear-gradient(45deg, $blue, transparent);
+  a{position: relative; @include button-style; color: #fff; background-color: transparent; border: 2px solid #fff;}
+}
+
+.sidebar{
+  top: 0;
+}
+.container{
+  width: 1200px;
+  margin: 0 auto;
+  font-family: Exo;
+  h2{text-align: center; color: $blue;}
+  .item{
+    margin-top: 2em;
+    h3{
+      margin-bottom: 0;
+      text-align: center;
+      font-weight: 700;
+    }
+    .item-info{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      .image{width: 500px;
+        figure{
+          position: relative;
+          width: inherit;
+          img{width: inherit; border: 2px solid #444;}
+          figcaption{color: #777; transform: rotate(270deg); position: absolute; left: -57px; bottom: 2.6em; font-weight: 900;}
+        }
+      }
+      .proj-image{
+        width: 500px;
+        .img{
+          position: relative;
+          img{
+            width: 500px;
+          }
+          .hover{
+            @include hover-state;
+            background-image: linear-gradient(300deg, $blue, transparent);
+            a{padding-left: 50px; padding-right: 50px;}
+          }
+        }
+      }
+      .blog-image{
+        width: 300px;
+        .img{
+          position: relative;
+          img{
+            width: 300px;
+          }
+          .hover{
+            @include hover-state;
+          }
+        }
+        figure{
+          position: relative;
+        }
+      }
+      .description{
+        margin-top: 1em;
+        margin-left: 3.5em;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .row{
+        h4{
+          font-weight: 600;
+          margin-top: 0;
+          margin-bottom: 0;
+          padding-bottom: 0;
+        }
+        p{
+          margin-top: 0.3em;
+        }
+      }
+    }
+  }
+}
