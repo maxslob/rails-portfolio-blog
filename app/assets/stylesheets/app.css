@@ -1144,12 +1144,12 @@ th {
     font-size: 1.8em;
     margin-top: 2em;
   }
-  .wrapper p {
+  .wrapper > p {
     font-size: 1.4em;
     font-weight: 300;
     margin-top: 0.5em;
   }
-  .wrapper p:first-letter {
+  > .wrapper > p:first-letter {
     text-decoration: none;
     font-size: 2.5em;
     float: left;
@@ -1599,6 +1599,148 @@ th {
   margin-top: 0.3em;
 }
 
+.image-holder {
+  height: 400px;
+  position: absolute;
+  top: 0;
+}
+
+.image-holder .gradient {
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  background-image: linear-gradient(to top, #fff, transparent);
+}
+
+.image-holder img {
+  position: relative;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+}
+
+.container-post {
+  width: 100%;
+  height: 1000px;
+  background-color: #fff;
+  margin-top: 400px;
+  z-index: 1;
+}
+
+.container-post .wrapper {
+  width: 750px;
+  margin: 0 auto;
+}
+
+.container-post .wrapper hr {
+  margin: 1.5em 45%;
+  border: 0;
+  border-top: 3px solid #00AEEF;
+}
+
+.container-post .wrapper #share_box {
+  text-align: center;
+}
+
+.container-post .wrapper #share_box span {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.5em;
+}
+
+.container-post .wrapper #share_box a {
+  cursor: pointer;
+  padding: 0.5em 1em;
+  font-size: 1.2em;
+}
+
+.container-post .wrapper #share_box a:hover {
+  color: #00AEEF;
+}
+
+.container-post .wrapper article a {
+  border-bottom: 2px solid #00AEEF;
+  line-height: 1em;
+}
+
+.container-post .wrapper article a:hover {
+  color: #00AEEF;
+}
+
+.container-post .wrapper article li {
+  list-style: circle;
+}
+
+.container-post .wrapper article h1, .container-post .wrapper article h2, .container-post .wrapper article h3, .container-post .wrapper article h4, .container-post .wrapper article h5, .container-post .wrapper article h6 {
+  text-align: center;
+}
+
+.container-post .wrapper article h1 {
+  font-size: 2.5em;
+}
+
+.container-post .wrapper article h2 {
+  font-size: 2.1em;
+}
+
+.container-post .wrapper article h3 {
+  font-size: 1.7em;
+}
+
+.container-post .wrapper article h4 {
+  font-size: 1.3em;
+}
+
+.container-post .wrapper article h3 {
+  margin: 1.414em 0 0.5em;
+  width: 100%;
+}
+
+.container-post .wrapper article hr {
+  border-color: #ccc;
+}
+
+.container-post .wrapper article p {
+  margin: 1em auto;
+  width: 95%;
+  font-size: 1.4em;
+}
+
+.container-post .wrapper article p:first-child:first-letter {
+  text-decoration: none;
+  font-size: 2.8em;
+  float: left;
+  color: white;
+  padding: 5px 10px;
+  margin: 7px 10px 0 0;
+  background-color: #333;
+  line-height: 1;
+  border-radius: 5px;
+}
+
+.container-post .wrapper h1 {
+  font-size: 3em;
+  text-align: center;
+  font-weight: 700;
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.container-post .wrapper h1 small {
+  position: absolute;
+  left: 42%;
+  bottom: -25px;
+  font-size: 0.4em;
+  font-weight: 600;
+}
+
+.container-post .wrapper h1 + hr {
+  margin-top: 2em;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -1874,4 +2016,25 @@ button:focus {
 .pagination .disabled:hover {
   color: #C0C0C0;
   background: white;
+}
+
+#admin_links {
+  position: fixed;
+  right: -10px;
+  top: 45%;
+  display: flex;
+  flex-direction: column;
+}
+
+#admin_links a {
+  border-radius: 10px;
+  padding: 6px 12px;
+  border: 2px solid #F15A29;
+  color: #F15A29;
+  margin: 0.2em 0;
+}
+
+#admin_links a:hover {
+  background-color: #F15A29;
+  color: #fff;
 }

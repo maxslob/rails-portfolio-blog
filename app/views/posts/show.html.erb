@@ -1,4 +1,48 @@
-<div id="post_show_content" class="skinny_wrapper">
+<%= stylesheet_link_tag 'app', media: 'all', 'data-turbolinks-track' => true %>
+<title><%= @post.title %></title>
+</head>
+
+  <%= render 'sidebar' %>
+
+<div class="image-holder">
+  <img src="https://images.unsplash.com/photo-1439546743462-802cabef8e97?fit=crop&fm=jpg&h=1000&ixjsv=2.0.0&ixlib=rb-0.3.5&q=80&w=1925" alt="hero-image" />
+  <div class="gradient"></div>
+</div>
+
+<div class="container-post">
+  <div class="wrapper">
+    <h1><%= @post.title %><small><%= @post.created_at.strftime('%b %d, %Y') %></small></h1>
+    <hr>
+    <article>
+       <%= markdown @post.content %>
+    </article>
+    <% if user_signed_in? %>
+      <div id="admin_links">
+         <%= link_to "Edit", edit_post_path(@post) %>
+        <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: "Are you sure you want to delete that article?"} %>
+      </div>
+    <% end %>
+
+    <hr class="hr">
+
+    <div id="share_box">
+      <span>Share This Article</span>
+      <!-- TWITTER -->
+      <a onclick="javascript:window.open('http://twitter.com/share?text= <%= @post.title %> by @max_slob - &amp;url=<%= url_for([@post, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300'); void(0);"><i class="fa fa-twitter"></i></a>
+    <!-- FACEBOOK -->
+      <a onclick="javascript:window.open('http://facebook.com/sharer.php?u=<%= url_for([@post, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300'); void(0);"><i class="fa fa-facebook"></i></a>
+      <!-- GOOGLE PLUS -->
+      <a onclick="javascript:window.open('https://plus.google.com/share?url=<%= url_for([@post, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300'); void(0);"><i class="fa fa-google-plus"></i></a>
+    </div>
+
+     <hr class="share-box-hr">
+
+      <%= render 'disqus' %>
+  </div>
+</div>
+
+
+<!-- <div id="post_show_content" class="skinny_wrapper">
     <div class="title">
       <h2><%= @post.title %></h2>
       <p class="date"><%= @post.created_at.strftime('%A, %B %d') %></p>
@@ -6,31 +50,12 @@
     </div>
 
     <div id="content">
-		  <%= markdown @post.content %>
-  	</div>
-
-  <% if user_signed_in? %>
-    <div id="admin_links">
-      <%= link_to "Edit Article", edit_post_path(@post) %>
-      <%= link_to "Delete Article", post_path(@post), method: :delete, data: { confirm: "Are you sure you want to delete that article?"} %>
+      <%= markdown @post.content %>
     </div>
-  <% end %>
 
-  <hr class="share-box-hr">
 
-  <div id="share_box">
-    <p>Share This Article</p>
-    <!-- TWITTER -->
-    <a onclick="javascript:window.open('http://twitter.com/share?text= <%= @post.title %> by @max_slob - &amp;url=<%= url_for([@post, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300'); void(0);"><i class="fa fa-twitter"></i></a>
-	<!-- FACEBOOK -->
-    <a onclick="javascript:window.open('http://facebook.com/sharer.php?u=<%= url_for([@post, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300'); void(0);"><i class="fa fa-facebook"></i></a>
-    <!-- GOOGLE PLUS -->
-    <a onclick="javascript:window.open('https://plus.google.com/share?url=<%= url_for([@post, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300'); void(0);"><i class="fa fa-google-plus"></i></a>
-  </div>
-
-  <hr class="share-box-hr">
-
-  <%= render 'disqus' %>
   
-</div> <!--post-show-content-end-->
+  
+</div> post-show-content-end
 
+ -->

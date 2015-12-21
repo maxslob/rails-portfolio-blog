@@ -9,6 +9,7 @@ $green: #39B54A;
 @import 'sidebar';
 @import 'about-home';
 @import 'portfolio+blog';
+@import 'posts-show.css.scss';
 
 *{box-sizing: border-box}
 
@@ -221,6 +222,24 @@ button{&:focus{outline: none;}}
     &:hover{
       color: #C0C0C0;
       background: white;
+    }
+  }
+}
+
+#admin_links{
+  position: fixed;
+  right: -10px;
+  top: 45%;
+  display: flex;
+  flex-direction: column;
+  a{
+    border-radius: 10px;
+    padding: 6px 12px;
+    border: 2px solid $red; color: $red;
+    margin: 0.2em 0;
+    &:hover{
+      background-color: $red;
+      color: #fff;
     }
   }
 }

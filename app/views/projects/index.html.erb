@@ -18,7 +18,7 @@
         <figure>
           <span class="b-p-title"><%= link_to project.title, project %></span>
           <div class="img">
-            <div class="hover"><%= link_to "OPEN", project %></div>
+            <div class="hover"><%= link_to "OPEN", project.link, target: "_blank" %></div>
             <img src="http://i.imgur.com/SekwlLal.png" alt="project" />
           </div>
           <figcaption><%= project.created_at.strftime('%b %d, %Y') %></figcaption>
@@ -34,6 +34,12 @@
           <h4>Skills</h4>
           <p>This functionality will be available soon.</p>
         </div>
+        <% if user_signed_in? %>
+          <div id="admin_links">
+            <%= link_to "Edit Project", edit_project_path(project) %>
+            <%= link_to "Delete Project", project_path(project), method: :delete, data: {confirm: "Are you sure?"} %>
+          </div>
+        <% end %>
       </div>
     </div>
     <% end %>

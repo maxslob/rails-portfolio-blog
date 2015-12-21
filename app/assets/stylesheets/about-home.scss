@@ -171,11 +171,11 @@
       font-size: 1.8em;
       margin-top: 2em;
     }
-    p{
+    > p{
       font-size: 1.4em;
       font-weight: 300;
       margin-top: 0.5em;
-      &:first-letter {
+      > &:first-letter {
         text-decoration: none;
         font-size: 2.5em;
         float: left;
